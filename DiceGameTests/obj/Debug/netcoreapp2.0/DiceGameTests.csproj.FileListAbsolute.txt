@@ -1,0 +1,10 @@
+/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/bin/Debug/netcoreapp2.0/DiceGameTests.deps.json
+/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/bin/Debug/netcoreapp2.0/DiceGameTests.runtimeconfig.json
+/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/bin/Debug/netcoreapp2.0/DiceGameTests.runtimeconfig.dev.json
+/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/bin/Debug/netcoreapp2.0/DiceGameTests.dll
+/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/bin/Debug/netcoreapp2.0/DiceGameTests.pdb
+/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/obj/Debug/netcoreapp2.0/DiceGameTests.csproj.CoreCompileInputs.cache
+/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/obj/Debug/netcoreapp2.0/DiceGameTests.AssemblyInfoInputs.cache
+/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/obj/Debug/netcoreapp2.0/DiceGameTests.AssemblyInfo.cs
+/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/obj/Debug/netcoreapp2.0/DiceGameTests.dll
+/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/obj/Debug/netcoreapp2.0/DiceGameTests.pdb
