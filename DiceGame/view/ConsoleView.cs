@@ -32,6 +32,10 @@ namespace DiceGame.View
         {
             Output.WriteLine(QUIT);
         }
-        
+
+        public void showBetting()
+        {
+
+        }
     }
 }

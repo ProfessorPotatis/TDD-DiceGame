@@ -20,7 +20,21 @@ namespace DiceGameTests
             sut.run();
 
             mockView.Verify(view => view.showMenu());
+            mockView.Verify(view => view.showBetting(), Times.Never());
             mockView.Verify(view => view.showQuitMessage());
+        }
+
+        [Fact]
+        public void shouldShowMenuAndBetting()
+        {
+            Mock<IConsoleView> mockView = new Mock<IConsoleView>();
+            mockView.Setup(mock => mock.showMenu());
+
+            sut = new Game(mockView.Object);
+            sut.run();
+
+            mockView.Verify(view => view.showMenu());
+            mockView.Verify(view => view.showBetting());
         }
     }
 }
