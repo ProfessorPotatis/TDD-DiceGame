@@ -11,7 +11,7 @@ namespace DiceGameTests
         private Game sut;
 
         [Fact]
-        public void shouldCallShowMenu()
+        public void shouldShowMenuAndQuit()
         {
             Mock<IConsoleView> mockView = new Mock<IConsoleView>();
             mockView.Setup(mock => mock.showMenu());
@@ -20,6 +20,7 @@ namespace DiceGameTests
             sut.run();
 
             mockView.Verify(view => view.showMenu());
+            mockView.Verify(view => view.showQuitMessage());
         }
     }
 }

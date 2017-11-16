@@ -26,6 +26,11 @@ namespace DiceGame.View
         {
             Output.WriteLine(MENU);
         }
+
+        public void showQuitMessage()
+        {
+            
+        }
         
     }
 }
