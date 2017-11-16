@@ -22,5 +22,17 @@ namespace DiceGameTests
 
             stringWriter.Verify(sw => sw.WriteLine(ConsoleView.MENU));
         }
+
+        [Fact]
+        public void shouldShowQuitMessage()
+        {
+            Mock<StringWriter> stringWriter = new Mock<StringWriter>();
+
+            sut = new ConsoleView(stringWriter.Object);
+
+            sut.showQuitMessage();
+
+            stringWriter.Verify(sw => sw.WriteLine());
+        }
     }
 }
