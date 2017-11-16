@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace DiceGame
 {
@@ -6,7 +7,8 @@ namespace DiceGame
     {
         static void Main(string[] args)
         {
-            View.IConsoleView view = new View.ConsoleView();
+            StringWriter stringWriter = new StringWriter();
+            View.IConsoleView view = new View.ConsoleView(stringWriter);
             Controller.Game game = new Controller.Game(view);
 
             game.run();

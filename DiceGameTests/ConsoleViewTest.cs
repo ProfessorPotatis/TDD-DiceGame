@@ -1,7 +1,6 @@
 using System;
+using System.IO;
 using Xunit;
-/*using NUnit;
-using NUnit.Framework;*/
 using Moq;
 using DiceGame.View;
 using DiceGame.Controller;
@@ -10,18 +9,18 @@ namespace DiceGameTests
 {
     public class ConsoleViewTest
     {
-        private Game sut;
+        private ConsoleView sut;
 
         [Fact]
-        public void shouldCallShowMenu()
+        public void shouldShowMenu()
         {
-            Mock<IConsoleView> mockView = new Mock<IConsoleView>();
-            mockView.Setup(mock => mock.showMenu());
+            Mock<StringWriter> stringWriter = new Mock<StringWriter>();
 
-            sut = new Game(mockView.Object);
-            sut.run();
+            sut = new ConsoleView(stringWriter.Object);
 
-            mockView.Verify(view => view.showMenu());
+            sut.showMenu();
+
+            stringWriter.Verify(sw => sw.WriteLine());
         }
     }
 }
