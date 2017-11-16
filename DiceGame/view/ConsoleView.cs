@@ -6,6 +6,7 @@ namespace DiceGame.View
     public class ConsoleView : IConsoleView
     {
         private StringWriter _output;
+        public const string MENU = "Dice Game Menu\n Bet (h)igher or (l)ower or (q)uit";
 
         public ConsoleView(StringWriter output)
         {
@@ -23,7 +24,7 @@ namespace DiceGame.View
 
         public void showMenu()
         {
-            Output.WriteLine("Dice Game Menu\n Bet (h)igher or (l)ower or (q)uit");
+            Output.WriteLine(MENU);
         }
         
     }

@@ -20,7 +20,7 @@ namespace DiceGameTests
 
             sut.showMenu();
 
-            stringWriter.Verify(sw => sw.WriteLine("Dice Game Menu\n Bet (h)igher or (l)ower or (q)uit"));
+            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.MENU));
         }
     }
 }
