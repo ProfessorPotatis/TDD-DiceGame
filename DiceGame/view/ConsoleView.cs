@@ -7,6 +7,7 @@ namespace DiceGame.View
     {
         private StringWriter _output;
         public const string MENU = "Dice Game Menu\n Bet (h)igher or (l)ower or (q)uit";
+        public const string QUIT = "Thank you for playing and welcome back next time";
 
         public ConsoleView(StringWriter output)
         {
@@ -29,7 +30,7 @@ namespace DiceGame.View
 
         public void showQuitMessage()
         {
-            Output.WriteLine("Thank you for playing and welcome back next time");
+            Output.WriteLine(QUIT);
         }
         
     }
