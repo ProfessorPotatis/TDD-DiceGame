@@ -36,7 +36,7 @@ dotnet run
 ```
 
 
-## Run test coverage (minicover)
+## Run all tests and generate test coverage (minicover)
 In the terminal, directory DiceGameTests:
 ```
 bash checkCoverage.sh
