@@ -5,14 +5,25 @@ namespace DiceGame.View
 {
     public class ConsoleView : IConsoleView
     {
-        public ConsoleView(StringWriter stringWriter)
-        {
+        private StringWriter _output;
 
+        public ConsoleView(StringWriter output)
+        {
+            Output = output;
+        }
+
+        public StringWriter Output
+        {
+            get { return _output; }
+            set
+            {
+                _output = value;
+            }
         }
 
         public void showMenu()
         {
-            
+            Output.WriteLine();
         }
         
     }
