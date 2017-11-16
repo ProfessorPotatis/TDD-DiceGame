@@ -7,17 +7,21 @@ using DiceGame.Controller;
 
 namespace DiceGameTests
 {
-    public class ConsoleViewTest
+    public class ConsoleViewTest : IDisposable
     {
+        private Mock<StringWriter> stringWriter;
         private ConsoleView sut;
+
+        // Setup
+        public ConsoleViewTest()
+        {
+            stringWriter = new Mock<StringWriter>();
+            sut = new ConsoleView(stringWriter.Object);
+        }
 
         [Fact]
         public void shouldShowMenu()
         {
-            Mock<StringWriter> stringWriter = new Mock<StringWriter>();
-
-            sut = new ConsoleView(stringWriter.Object);
-
             sut.showMenu();
 
             stringWriter.Verify(sw => sw.WriteLine(ConsoleView.MENU));
@@ -26,13 +30,14 @@ namespace DiceGameTests
         [Fact]
         public void shouldShowQuitMessage()
         {
-            Mock<StringWriter> stringWriter = new Mock<StringWriter>();
-
-            sut = new ConsoleView(stringWriter.Object);
-
             sut.showQuitMessage();
 
             stringWriter.Verify(sw => sw.WriteLine(ConsoleView.QUIT));
+        }
+
+        public void Dispose()
+        {
+
         }
     }
 }
