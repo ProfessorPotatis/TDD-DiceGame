@@ -29,7 +29,7 @@ namespace DiceGame.View
 
         public void showQuitMessage()
         {
-            Output.WriteLine();
+            Output.WriteLine("Thank you for playing and welcome back next time");
         }
         
     }
