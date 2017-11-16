@@ -25,8 +25,8 @@ dotnet run
 ```
 5. Open Command Palette...
 6. NuGet Package Manager: Add Package (To DiceGameTests.csproj)
-* NUnit latest version
-* NUnit.Console latest version
+* xUnit latest version
+* xunit.runner.visualstudio latest version
 * Moq latest version
 * OpenCover latest version
 7. In DiceGameTests.csproj:

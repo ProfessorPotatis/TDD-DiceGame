@@ -6,5 +6,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Program.cs" />
+    <Content Include="view\ConsoleView.cs" />
+    <Content Include="controller\Game.cs" />
   </ItemGroup>
 </Project>
