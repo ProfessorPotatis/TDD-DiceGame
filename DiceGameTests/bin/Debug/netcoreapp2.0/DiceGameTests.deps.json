@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "10abf6551e9e68bbe34cc736cc43c169ac963cbf"
+    "signature": "af40d9281ad6e5162ea40374e4aa53a529619f02"
   },
   "compilationOptions": {},
   "targets": {
@@ -11,7 +11,6 @@
           "DiceGame": "1.0.0",
           "Microsoft.NET.Test.Sdk": "15.3.0",
           "Moq": "4.7.145",
-          "OpenCover": "4.6.519",
           "xunit": "2.2.0",
           "xunit.runner.visualstudio": "2.2.0"
         },
@@ -388,7 +387,6 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
-      "OpenCover/4.6.519": {},
       "runtime.native.System/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Targets": "1.1.0"
@@ -1161,13 +1159,6 @@
       "sha512": "sha512-UIvG8R8Q3cOooGT4zIkNP5oXG27DsU73K3DLkjoS0SYs8lYAdakcqYq/gvPjwdIk0CJfcSwriwXOzGSjxQBMPg==",
       "path": "newtonsoft.json/9.0.1",
       "hashPath": "newtonsoft.json.9.0.1.nupkg.sha512"
-    },
-    "OpenCover/4.6.519": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-oReudTijK4ghbd1GNTzl7Su2KzOufj2evTS5PTGAGC5ThfrThcInB/t9w2ISkcEacOsgLQTdG+PO0UUUGZ+zTw==",
-      "path": "opencover/4.6.519",
-      "hashPath": "opencover.4.6.519.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",

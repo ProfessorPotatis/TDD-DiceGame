@@ -1,6 +1,7 @@
 # TDD-DiceGame
 An exercise in Test Driven Development.
 
+
 ## Setup in Visual Studio Code
 1. In optional directory:
 ```
@@ -28,8 +29,17 @@ dotnet run
 * xUnit latest version
 * xunit.runner.visualstudio latest version
 * Moq latest version
-* OpenCover latest version
+* Minicover latest version
 7. In DiceGameTests.csproj:
 ```
 <ProjectReference Include="..\DiceGame\DiceGame.csproj" />
 ```
+
+
+## Run test coverage (minicover)
+In the terminal, directory DiceGameTests:
+```
+bash checkCoverage.sh
+```
+
+This generates a coverage report, which you can see in coverage-html/DiceGame.
