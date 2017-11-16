@@ -23,6 +23,7 @@ namespace DiceGame.Controller
         public void run()
         {
             View.showMenu();
+            View.showQuitMessage();
         }
         
     }
