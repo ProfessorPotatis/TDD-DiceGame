@@ -32,7 +32,7 @@ namespace DiceGameTests
 
             sut.showQuitMessage();
 
-            stringWriter.Verify(sw => sw.WriteLine());
+            stringWriter.Verify(sw => sw.WriteLine("Thank you for playing and welcome back next time"));
         }
     }
 }
