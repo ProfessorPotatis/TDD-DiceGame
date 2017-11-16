@@ -23,7 +23,7 @@ namespace DiceGame.View
 
         public void showMenu()
         {
-            Output.WriteLine();
+            Output.WriteLine("Dice Game Menu\n Bet (h)igher or (l)ower or (q)uit");
         }
         
     }
