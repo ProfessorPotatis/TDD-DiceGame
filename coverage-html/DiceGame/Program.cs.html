@@ -1,6 +1,7 @@
 <html>
 <body style="font-family: sans-serif;">
 <div style="white-space: pre;background-color: #EEF4ED;">using System;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">using System.IO;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">namespace DiceGame</div>
 <div style="white-space: pre;background-color: #EEF4ED;">{</div>
@@ -8,7 +9,8 @@
 <div style="white-space: pre;background-color: #EEF4ED;">    {</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        static void Main(string[] args)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
-<div style="white-space: pre;background-color: #EACECC;">            View.IConsoleView view = new View.ConsoleView();</div>
+<div style="white-space: pre;background-color: #EACECC;">            StringWriter stringWriter = new StringWriter();</div>
+<div style="white-space: pre;background-color: #EACECC;">            View.IConsoleView view = new View.ConsoleView(stringWriter);</div>
 <div style="white-space: pre;background-color: #EACECC;">            Controller.Game game = new Controller.Game(view);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EACECC;">            game.run();</div>
