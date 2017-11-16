@@ -2,10 +2,9 @@ using System;
 
 namespace DiceGame.View
 {
-    public class ConsoleView
+    public class ConsoleView : IConsoleView
     {
-
-        public virtual void showMenu()
+        public void showMenu()
         {
             
         }

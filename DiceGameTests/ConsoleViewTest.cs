@@ -13,9 +13,9 @@ namespace DiceGameTests
         private Game sut;
 
         [Fact]
-        public void shouldShowMenu()
+        public void shouldCallShowMenu()
         {
-            Mock<ConsoleView> mockView = new Mock<ConsoleView>();
+            Mock<IConsoleView> mockView = new Mock<IConsoleView>();
             mockView.Setup(mock => mock.showMenu());
 
             sut = new Game(mockView.Object);

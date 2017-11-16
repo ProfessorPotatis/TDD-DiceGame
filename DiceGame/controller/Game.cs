@@ -4,14 +4,14 @@ namespace DiceGame.Controller
 {
     public class Game
     {
-        private View.ConsoleView _view;
+        private View.IConsoleView _view;
 
-        public Game(View.ConsoleView view)
+        public Game(View.IConsoleView view)
         {
             View = view;
         }
 
-        public View.ConsoleView View
+        public View.IConsoleView View
         {
             get { return _view; }
             set
