@@ -11,6 +11,6 @@
     <ProjectReference Include="..\DiceGame\DiceGame.csproj" />
     <DotNetCliToolReference Include="MiniCover" Version="2.0.0-ci-*" />
     <Content Include="ConsoleViewTest.cs" />
-    <Content Include="DiceGameTest.cs" />
+    <Content Include="GameTest.cs" />
   </ItemGroup>
 </Project>

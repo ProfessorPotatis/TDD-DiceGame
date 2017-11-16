@@ -6,7 +6,7 @@ using DiceGame.Controller;
 
 namespace DiceGameTests
 {
-    public class DiceGameTest
+    public class GameTest
     {
         private Game sut;
 
