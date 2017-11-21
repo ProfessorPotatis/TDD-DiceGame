@@ -9,5 +9,7 @@
     <Content Include="view\ConsoleView.cs" />
     <Content Include="controller\Game.cs" />
     <Content Include="view\IConsoleView.cs" />
+    <Content Include="model\DiceGameModel.cs" />
+    <Content Include="model\IDiceGameModel.cs" />
   </ItemGroup>
 </Project>

@@ -9,7 +9,8 @@ namespace DiceGame
         {
             StringWriter stringWriter = new StringWriter();
             View.IConsoleView view = new View.ConsoleView(stringWriter);
-            Controller.Game game = new Controller.Game(view);
+            Model.IDiceGameModel model = new Model.DiceGameModel();
+            Controller.Game game = new Controller.Game(view, model);
 
             game.run();
         }

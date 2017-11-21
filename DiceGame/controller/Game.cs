@@ -5,10 +5,12 @@ namespace DiceGame.Controller
     public class Game
     {
         private View.IConsoleView _view;
+        private Model.IDiceGameModel _model;
 
-        public Game(View.IConsoleView view)
+        public Game(View.IConsoleView view, Model.IDiceGameModel model)
         {
             View = view;
+            Model = model;
         }
 
         public View.IConsoleView View
@@ -17,6 +19,15 @@ namespace DiceGame.Controller
             set
             {
                 _view = value;
+            }
+        }
+
+        public Model.IDiceGameModel Model
+        {
+            get { return _model; }
+            set
+            {
+                _model = value;
             }
         }
 

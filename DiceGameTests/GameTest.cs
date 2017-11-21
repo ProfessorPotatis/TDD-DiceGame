@@ -2,6 +2,7 @@ using System;
 using Xunit;
 using Moq;
 using DiceGame.View;
+using DiceGame.Model;
 using DiceGame.Controller;
 
 namespace DiceGameTests
@@ -9,13 +10,15 @@ namespace DiceGameTests
     public class GameTest
     {
         private Mock<IConsoleView> mockView;
+        private Mock<IDiceGameModel> mockModel;
         private Game sut;
 
         // Setup
         public GameTest()
         {
             mockView = new Mock<IConsoleView>();
-            sut = new Game(mockView.Object);
+            mockModel = new Mock<IDiceGameModel>();
+            sut = new Game(mockView.Object, mockModel.Object);
         }
 
         [Fact]
@@ -49,6 +52,18 @@ namespace DiceGameTests
             sut.run();
 
             mockView.Verify(view => view.getUserBet());
+        }
+
+        [Fact]
+        public void shouldHandleGameRules()
+        {
+            int inputMoney = 10;
+
+            mockView.Setup(mock => mock.getUserBet()).Returns(inputMoney);
+
+            sut.run();
+
+            mockModel.Verify(model => model.runGame(inputMoney));
         }
     }
 }
