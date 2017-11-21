@@ -8,5 +8,6 @@ namespace DiceGame.View
         void showQuitMessage();
         void showBetting();
         bool userQuits();
+        int getUserBet();
     }
 }

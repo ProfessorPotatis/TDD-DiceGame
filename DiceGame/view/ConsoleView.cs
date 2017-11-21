@@ -42,5 +42,10 @@ namespace DiceGame.View
         {
             return false;
         }
+
+        public int getUserBet()
+        {
+            return 0;
+        }
     }
 }

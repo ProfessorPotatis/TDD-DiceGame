@@ -40,5 +40,15 @@ namespace DiceGameTests
             mockView.Verify(view => view.showMenu());
             mockView.Verify(view => view.showBetting());
         }
+
+        [Fact]
+        public void shouldAskUserToBet()
+        {
+            mockView.Setup(mock => mock.userQuits()).Returns(false);
+
+            sut.run();
+
+            mockView.Verify(view => view.getUserBet());
+        }
     }
 }
