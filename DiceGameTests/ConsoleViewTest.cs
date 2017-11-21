@@ -40,7 +40,7 @@ namespace DiceGameTests
         {
             sut.showBetting();
 
-            stringWriter.Verify(sw => sw.WriteLine());
+            stringWriter.Verify(sw => sw.WriteLine("Place your bet: "));
         }
 
         public void Dispose()
