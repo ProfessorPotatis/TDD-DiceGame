@@ -27,6 +27,8 @@ namespace DiceGame.Controller
             if (View.userQuits() == false)
             {
                 View.showBetting();
+
+                int value = View.getUserBet();
             }
 
             View.showQuitMessage();
