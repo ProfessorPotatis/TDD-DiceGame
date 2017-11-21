@@ -9,48 +9,60 @@ namespace DiceGameTests
 {
     public class ConsoleViewTest : IDisposable
     {
-        private Mock<StringWriter> stringWriter;
-        private Mock<StringReader> stringReader;
         private ConsoleView sut;
 
         // Setup
         public ConsoleViewTest()
         {
-            stringWriter = new Mock<StringWriter>();
-            stringReader = new Mock<StringReader>(Console.ReadLine());
-            sut = new ConsoleView(stringWriter.Object, stringReader.Object);
+            sut = new ConsoleView();
         }
 
         [Fact]
         public void shouldShowMenu()
         {
-            sut.showMenu();
+            using (var sw = new StringWriter())
+            {
+                Console.SetOut(sw);
 
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.MENU));
+                sut.showMenu();
+        
+                string result = sw.ToString();
+                Assert.Contains(ConsoleView.MENU, result);
+            }
         }
 
         [Fact]
         public void shouldShowQuitMessage()
         {
-            sut.showQuitMessage();
+            using (var sw = new StringWriter())
+            {
+                Console.SetOut(sw);
 
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.QUIT));
+                sut.showQuitMessage();
+        
+                string result = sw.ToString();
+                Assert.Contains(ConsoleView.QUIT, result);
+            }
         }
 
         [Fact]
         public void shouldShowBetting()
         {
-            sut.showBetting();
+            using (var sw = new StringWriter())
+            {
+                Console.SetOut(sw);
 
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.BET));
+                sut.showBetting();
+        
+                string result = sw.ToString();
+                Assert.Contains(ConsoleView.BET, result);
+            }
         }
 
         [Fact]
         public void shouldGetUserBet()
         {
-            int inputBet = sut.getUserBet();
-
-            stringReader.Verify(sr => sr.ReadLine());
+            
         }
 
         public void Dispose()
