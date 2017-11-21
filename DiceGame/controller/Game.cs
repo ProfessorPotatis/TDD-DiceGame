@@ -40,6 +40,8 @@ namespace DiceGame.Controller
                 View.showBetting();
 
                 int value = View.getUserBet();
+
+                Model.runGame(value);
             }
 
             View.showQuitMessage();
