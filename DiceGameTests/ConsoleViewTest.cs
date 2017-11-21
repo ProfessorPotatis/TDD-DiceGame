@@ -35,6 +35,14 @@ namespace DiceGameTests
             stringWriter.Verify(sw => sw.WriteLine(ConsoleView.QUIT));
         }
 
+        [Fact]
+        public void shouldShowBetting()
+        {
+            sut.showBetting();
+
+            stringWriter.Verify(sw => sw.WriteLine());
+        }
+
         public void Dispose()
         {
 

@@ -7,10 +7,12 @@
 <div style="white-space: pre;background-color: #EEF4ED;">    public class Game</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    {</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        private View.IConsoleView _view;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        private Model.IDiceGameModel _model;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">        public Game(View.IConsoleView view)</div>
+<div style="white-space: pre;background-color: #D2EACE;">        public Game(View.IConsoleView view, Model.IDiceGameModel model)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
 <div style="white-space: pre;background-color: #D2EACE;">            View = view;</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Model = model;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public View.IConsoleView View</div>
@@ -22,9 +24,28 @@
 <div style="white-space: pre;background-color: #EEF4ED;">            }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public Model.IDiceGameModel Model</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            get { return _model; }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            set</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                _model = value;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public void run()</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
 <div style="white-space: pre;background-color: #D2EACE;">            View.showMenu();</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">            if (View.userQuits() == false)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                View.showBetting();</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                int bet = View.getUserBet();</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                Model.runGame(bet);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">            View.showQuitMessage();</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        </div>
