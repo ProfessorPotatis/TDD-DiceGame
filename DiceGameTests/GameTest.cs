@@ -8,16 +8,19 @@ namespace DiceGameTests
 {
     public class GameTest
     {
+        private Mock<IConsoleView> mockView;
         private Game sut;
+
+        // Setup
+        public GameTest()
+        {
+            mockView = new Mock<IConsoleView>();
+            sut = new Game(mockView.Object);
+        }
 
         [Fact]
         public void shouldShowMenuAndQuit()
         {
-            Mock<IConsoleView> mockView = new Mock<IConsoleView>();
-            mockView.Setup(mock => mock.showMenu());
-
-            sut = new Game(mockView.Object);
-            
             mockView.Setup(mock => mock.userQuits()).Returns(true);
 
             sut.run();
@@ -30,11 +33,6 @@ namespace DiceGameTests
         [Fact]
         public void shouldShowMenuAndBetting()
         {
-            Mock<IConsoleView> mockView = new Mock<IConsoleView>();
-            mockView.Setup(mock => mock.showMenu());
-
-            sut = new Game(mockView.Object);
-
             mockView.Setup(mock => mock.userQuits()).Returns(false);
 
             sut.run();
