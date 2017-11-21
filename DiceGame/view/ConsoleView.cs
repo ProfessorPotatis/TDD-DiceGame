@@ -35,7 +35,7 @@ namespace DiceGame.View
 
         public void showBetting()
         {
-
+            Output.WriteLine();
         }
 
         public bool userQuits()
