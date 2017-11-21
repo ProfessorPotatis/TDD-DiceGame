@@ -39,9 +39,9 @@ namespace DiceGame.Controller
             {
                 View.showBetting();
 
-                int value = View.getUserBet();
+                int bet = View.getUserBet();
 
-                Model.runGame(value);
+                Model.runGame(bet);
             }
 
             View.showQuitMessage();
