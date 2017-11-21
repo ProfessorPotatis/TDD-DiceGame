@@ -37,5 +37,10 @@ namespace DiceGame.View
         {
 
         }
+
+        public bool userQuits()
+        {
+            return false;
+        }
     }
 }

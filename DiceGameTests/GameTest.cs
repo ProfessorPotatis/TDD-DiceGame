@@ -17,6 +17,9 @@ namespace DiceGameTests
             mockView.Setup(mock => mock.showMenu());
 
             sut = new Game(mockView.Object);
+            
+            mockView.Setup(mock => mock.userQuits()).Returns(true);
+
             sut.run();
 
             mockView.Verify(view => view.showMenu());
@@ -31,6 +34,9 @@ namespace DiceGameTests
             mockView.Setup(mock => mock.showMenu());
 
             sut = new Game(mockView.Object);
+
+            mockView.Setup(mock => mock.userQuits()).Returns(false);
+
             sut.run();
 
             mockView.Verify(view => view.showMenu());
