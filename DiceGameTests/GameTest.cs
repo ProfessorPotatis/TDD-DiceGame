@@ -57,7 +57,7 @@ namespace DiceGameTests
         [Fact]
         public void shouldHandleGameRules()
         {
-            int inputMoney = 10;
+            string inputMoney = "10";
 
             mockView.Setup(mock => mock.getUserBet()).Returns(inputMoney);
 

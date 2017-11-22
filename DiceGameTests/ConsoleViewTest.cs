@@ -10,7 +10,7 @@ namespace DiceGameTests
     public class ConsoleViewTest : IDisposable
     {
         private Mock<StringWriter> stringWriter;
-       // private Mock<StringReader> stringReader;
+        //private Mock<StringReader> stringReader;
         private ConsoleView sut;
 
         // Setup
@@ -18,7 +18,7 @@ namespace DiceGameTests
         {
             stringWriter = new Mock<StringWriter>();
             //stringReader = new Mock<StringReader>(Console.ReadLine());
-            sut = new ConsoleView(stringWriter.Object/*, stringReader.Object*/);
+            sut = new ConsoleView(stringWriter.Object);
         }
 
         [Fact]
@@ -45,13 +45,18 @@ namespace DiceGameTests
             stringWriter.Verify(sw => sw.WriteLine(ConsoleView.BET));
         }
 
-       /* [Fact]
+        [Fact]
         public void shouldGetUserBet()
         {
-            int inputBet = sut.getUserBet();
+            using (StringReader sr = new StringReader("100"))
+            {
+                Console.SetIn(sr);
 
-            stringReader.Verify(sr => sr.ReadLine());
-        }*/
+                string bet = sut.getUserBet();
+
+                stringWriter.Verify(sw => sw.WriteLine(bet));
+            }
+        }
 
         public void Dispose()
         {

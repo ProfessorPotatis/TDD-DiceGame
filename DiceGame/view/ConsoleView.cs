@@ -45,9 +45,9 @@ namespace DiceGame.View
             return false;
         }
 
-        public int getUserBet()
+        public string getUserBet()
         {
-            return 0;
+            return "10";
         }
     }
 }

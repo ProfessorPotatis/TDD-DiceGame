@@ -39,7 +39,7 @@ namespace DiceGame.Controller
             {
                 View.showBetting();
 
-                int bet = View.getUserBet();
+                string bet = View.getUserBet();
 
                 Model.runGame(bet);
             }
