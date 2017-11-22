@@ -47,7 +47,9 @@ namespace DiceGame.View
 
         public string getUserBet()
         {
-            return "10";
+            string bet = Console.ReadLine();
+            Console.WriteLine("{0}", bet);
+            return bet;
         }
     }
 }
