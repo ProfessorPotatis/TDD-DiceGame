@@ -42,6 +42,12 @@ namespace DiceGame.View
 
         public bool userQuits()
         {
+            string quit = Console.ReadLine();
+
+            if (quit == "q")
+            {
+                return true;
+            }
             return false;
         }
 
