@@ -48,13 +48,14 @@ namespace DiceGameTests
         [Fact]
         public void shouldGetUserBet()
         {
-            using (StringReader sr = new StringReader("100"))
+            using (StringReader sr = new StringReader("1000"))
             {
                 Console.SetIn(sr);
 
                 string bet = sut.getUserBet();
 
                 stringWriter.Verify(sw => sw.WriteLine(bet));
+                Assert.Equal(bet, "1000");
             }
         }
 
