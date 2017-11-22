@@ -6,14 +6,15 @@ namespace DiceGame.View
     public class ConsoleView : IConsoleView
     {
         private StringWriter _output;
-        public const string MENU = "Dice Game Menu\n Bet (h)igher or (l)ower or (q)uit";
+        public const string MENU = "Dice Game Menu\nPress any key to play or 'q' to quit";
         public const string QUIT = "Thank you for playing and welcome back next time";
         public const string BET = "Place your bet: ";
+        public const string QUIT_OPTION = "q";
 
         public ConsoleView(StringWriter output)
         {
             Output = output;
-            Console.SetOut(Output); // Only for testing
+            //Console.SetOut(Output); // Only for testing
         }
 
         public StringWriter Output
@@ -44,7 +45,7 @@ namespace DiceGame.View
         {
             string quit = Console.ReadLine();
 
-            if (quit == "q")
+            if (quit == QUIT_OPTION)
             {
                 return true;
             }

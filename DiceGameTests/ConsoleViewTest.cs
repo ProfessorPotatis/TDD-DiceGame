@@ -60,7 +60,7 @@ namespace DiceGameTests
         [Fact]
         public void shouldReturnTrueWhenUserQuits()
         {
-            using (StringReader sr = new StringReader("q"))
+            using (StringReader sr = new StringReader(ConsoleView.QUIT_OPTION))
             {
                 Console.SetIn(sr);
 

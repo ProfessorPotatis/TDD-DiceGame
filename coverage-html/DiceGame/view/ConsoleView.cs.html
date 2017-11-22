@@ -8,9 +8,10 @@
 <div style="white-space: pre;background-color: #EEF4ED;">    public class ConsoleView : IConsoleView</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    {</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        private StringWriter _output;</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        public const string MENU = &quot;Dice Game Menu\n Bet (h)igher or (l)ower or (q)uit&quot;;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public const string MENU = &quot;Dice Game Menu\nPress any key to play or &#39;q&#39; to quit&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string QUIT = &quot;Thank you for playing and welcome back next time&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string BET = &quot;Place your bet: &quot;;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public const string QUIT_OPTION = &quot;q&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">        public ConsoleView(StringWriter output)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
@@ -46,7 +47,7 @@
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
 <div style="white-space: pre;background-color: #D2EACE;">            string quit = Console.ReadLine();</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">            if (quit == &quot;q&quot;)</div>
+<div style="white-space: pre;background-color: #D2EACE;">            if (quit == QUIT_OPTION)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">            {</div>
 <div style="white-space: pre;background-color: #D2EACE;">                return true;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">            }</div>
