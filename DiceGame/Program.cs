@@ -7,7 +7,8 @@ namespace DiceGame
     {
         static void Main(string[] args)
         {
-            View.IConsoleView view = new View.ConsoleView();
+            StringWriter stringWriter = new StringWriter();
+            View.IConsoleView view = new View.ConsoleView(stringWriter);
             Model.IDiceGameModel model = new Model.DiceGameModel();
             Controller.Game game = new Controller.Game(view, model);
 

@@ -8,12 +8,16 @@
 <div style="white-space: pre;background-color: #EEF4ED;">    public class ConsoleView : IConsoleView</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    {</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        private StringWriter _output;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        //private StringReader _input;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string MENU = &quot;Dice Game Menu\n Bet (h)igher or (l)ower or (q)uit&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string QUIT = &quot;Thank you for playing and welcome back next time&quot;;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public const string BET = &quot;Place your bet: &quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">        public ConsoleView(StringWriter output)</div>
+<div style="white-space: pre;background-color: #D2EACE;">        public ConsoleView(StringWriter output/*, StringReader input*/)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
 <div style="white-space: pre;background-color: #D2EACE;">            Output = output;</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Console.SetOut(Output);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            //Input = input;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public StringWriter Output</div>
@@ -25,19 +29,28 @@
 <div style="white-space: pre;background-color: #EEF4ED;">            }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        /*public StringReader Input</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            get { return _input; }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            set</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                _input = value;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }*/</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public void showMenu()</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
-<div style="white-space: pre;background-color: #D2EACE;">            Output.WriteLine(MENU);</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Console.WriteLine(MENU);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public void showQuitMessage()</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
-<div style="white-space: pre;background-color: #D2EACE;">            Output.WriteLine(QUIT);</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Console.WriteLine(QUIT);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public void showBetting()</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
-<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Console.WriteLine(BET);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public bool userQuits()</div>
