@@ -72,6 +72,19 @@ namespace DiceGameTests
             }
         }
 
+        [Fact]
+        public void shouldReturnFalseWhenUserDoesNotQuit()
+        {
+            using (StringReader sr = new StringReader(""))
+            {
+                Console.SetIn(sr);
+
+                bool userQuits = sut.userQuits();
+
+                Assert.Equal(userQuits, false);
+            }
+        }
+
         public void Dispose()
         {
 
