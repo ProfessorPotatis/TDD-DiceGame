@@ -60,7 +60,7 @@ namespace DiceGameTests
         }
 
         [Fact]
-        public void shouldGetUserQuits()
+        public void shouldReturnTrueWhenUserQuits()
         {
             using (StringReader sr = new StringReader("q"))
             {
