@@ -11,5 +11,7 @@
     <Content Include="view\IConsoleView.cs" />
     <Content Include="model\DiceGameModel.cs" />
     <Content Include="model\IDiceGameModel.cs" />
+    <Content Include="model\Dice.cs" />
+    <Content Include="model\IDice.cs" />
   </ItemGroup>
 </Project>

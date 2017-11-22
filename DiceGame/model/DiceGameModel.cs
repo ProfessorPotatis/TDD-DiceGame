@@ -5,9 +5,9 @@ namespace DiceGame.Model
 {
     public class DiceGameModel : IDiceGameModel
     {
-        public void runGame(string bettedMoney)
+        public bool runGame(string bettedMoney)
         {
-
+            return false;
         }
 
     }

@@ -4,6 +4,6 @@ namespace DiceGame.Model
 {
     public interface IDiceGameModel
     {
-        void runGame(string bettedMoney);
+        bool runGame(string bettedMoney);
     }
 }
