@@ -10,14 +10,12 @@ namespace DiceGameTests
     public class ConsoleViewTest : IDisposable
     {
         private Mock<StringWriter> stringWriter;
-        //private Mock<StringReader> stringReader;
         private ConsoleView sut;
 
         // Setup
         public ConsoleViewTest()
         {
             stringWriter = new Mock<StringWriter>();
-            //stringReader = new Mock<StringReader>(Console.ReadLine());
             sut = new ConsoleView(stringWriter.Object);
         }
 
