@@ -25,6 +25,16 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldGetPlayerPoints()
+        {
+            mockModel.Setup(model => model.getPlayerPoints());
+
+            sut.getPlayerPoints();
+
+            mockPlayer.Verify(player => player.getPlayerPoints());
+        }
+
+        [Fact]
         public void shouldRollTwoDice()
         {
             string inputBet = "10";
