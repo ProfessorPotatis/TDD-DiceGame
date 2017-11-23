@@ -32,5 +32,15 @@ namespace DiceGameTests
 
             Assert.True(actual);
         }
+
+        [Fact]
+        public void shouldCheckBettingAndReturnFalse()
+        {
+            string bet = "120";
+
+            bool actual = sut.checkBetting(bet);
+
+            Assert.False(actual);
+        }
     }
 }
