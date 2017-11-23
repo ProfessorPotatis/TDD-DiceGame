@@ -1,0 +1,34 @@
+<html>
+<body style="font-family: sans-serif;">
+<div style="white-space: pre;background-color: #EEF4ED;">using System;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">using System.IO;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">namespace DiceGame.Model</div>
+<div style="white-space: pre;background-color: #EEF4ED;">{</div>
+<div style="white-space: pre;background-color: #EEF4ED;">    public class Dice : IDice</div>
+<div style="white-space: pre;background-color: #EEF4ED;">    {</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        private Random _die;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">        public Dice()</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Die = new Random();</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public Random Die</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            get { return _die; }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            set</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                _die = value;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public int rollDice()</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            return Die.Next(1, 7);;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">    }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">}</div>
+</body>
+</html>
