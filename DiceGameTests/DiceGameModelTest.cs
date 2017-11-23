@@ -2,7 +2,6 @@ using System;
 using Xunit;
 using Moq;
 using DiceGame.Model;
-using DiceGame.View;
 
 namespace DiceGameTests
 {

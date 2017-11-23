@@ -14,5 +14,6 @@
     <Content Include="GameTest.cs" />
     <Content Include="DiceGameModelTest.cs" />
     <Content Include="DiceTest.cs" />
+    <Content Include="PlayerTest.cs" />
   </ItemGroup>
 </Project>
