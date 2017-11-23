@@ -23,14 +23,14 @@ namespace DiceGameTests
             Assert.Equal(100, actual);
         }
 
-        /*[Fact]
+        [Fact]
         public void shouldCheckBetting()
         {
-            string inputBet = "10";
+            string bet = "20";
 
-            sut.runGame(inputBet);
+            bool actual = sut.checkBetting(bet);
 
-            mockPlayer.Verify(player => player.checkBetting(inputBet));
-        }*/
+            Assert.True(actual);
+        }
     }
 }

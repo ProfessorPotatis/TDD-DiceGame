@@ -12,7 +12,7 @@ namespace DiceGame.Model
 
         public bool checkBetting(string bet)
         {
-            return true;
+            return false;
         }
     }
 }
