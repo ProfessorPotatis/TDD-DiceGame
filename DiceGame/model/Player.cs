@@ -7,7 +7,12 @@ namespace DiceGame.Model
     {
         public int getPlayerPoints()
         {
-            return 0;
+            return 100;
+        }
+
+        public bool checkBetting(string bet)
+        {
+            return true;
         }
     }
 }

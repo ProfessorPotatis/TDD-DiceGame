@@ -16,7 +16,7 @@ namespace DiceGame.View
         public ConsoleView(StringWriter output)
         {
             Output = output;
-            Console.SetOut(Output); // Only for testing
+            //Console.SetOut(Output); // Only for testing
         }
 
         public StringWriter Output

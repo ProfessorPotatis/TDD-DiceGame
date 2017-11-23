@@ -50,9 +50,16 @@ namespace DiceGame.Model
 
         public void runGame(string bettedMoney)
         {
+            bool betOk = this.checkBetting(bettedMoney);
+
             int[] dice = this.rollDice();
 
             int sumOfDice = sumDice(dice[0], dice[1]);
+        }
+
+        public bool checkBetting(string bet)
+        {
+            return true;
         }
 
         public int[] rollDice()

@@ -35,6 +35,16 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldCheckBetting()
+        {
+            string inputBet = "10";
+
+            sut.runGame(inputBet);
+
+            mockPlayer.Verify(player => player.checkBetting(inputBet));
+        }
+
+        [Fact]
         public void shouldRollTwoDice()
         {
             string inputBet = "10";
