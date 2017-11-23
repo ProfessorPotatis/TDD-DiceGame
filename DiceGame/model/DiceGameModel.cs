@@ -59,7 +59,7 @@ namespace DiceGame.Model
 
         public bool checkBetting(string bet)
         {
-            return true;
+            return Player.checkBetting(bet);
         }
 
         public int[] rollDice()
