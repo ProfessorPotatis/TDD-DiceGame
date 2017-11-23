@@ -54,7 +54,6 @@ namespace DiceGameTests
             sut.run();
 
             mockModel.Verify(model => model.getPlayerPoints());
-            mockPlayer.Verify(player => player.getPlayerPoints());
         }
 
         [Fact]

@@ -11,7 +11,8 @@ namespace DiceGame
             View.IConsoleView view = new View.ConsoleView(stringWriter);
             Model.IDice dice1 = new Model.Dice();
             Model.IDice dice2 = new Model.Dice();
-            Model.IDiceGameModel model = new Model.DiceGameModel(dice1, dice2);
+            Model.IPlayer player = new Model.Player();
+            Model.IDiceGameModel model = new Model.DiceGameModel(dice1, dice2, player);
             Controller.Game game = new Controller.Game(view, model);
 
             game.run();

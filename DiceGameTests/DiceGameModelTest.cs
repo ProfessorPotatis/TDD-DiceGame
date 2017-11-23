@@ -10,6 +10,7 @@ namespace DiceGameTests
     {
         private Mock<IDice> mockDice1;
         private Mock<IDice> mockDice2;
+        private Mock<IPlayer> mockPlayer;
         private Mock<IDiceGameModel> mockModel;
         private DiceGameModel sut;
 
@@ -18,8 +19,9 @@ namespace DiceGameTests
         {
             mockDice1 = new Mock<IDice>();
             mockDice2 = new Mock<IDice>();
+            mockPlayer = new Mock<IPlayer>();
             mockModel = new Mock<IDiceGameModel>();
-            sut = new DiceGameModel(mockDice1.Object, mockDice2.Object);
+            sut = new DiceGameModel(mockDice1.Object, mockDice2.Object, mockPlayer.Object);
         }
 
         [Fact]

@@ -7,11 +7,13 @@ namespace DiceGame.Model
     {
         private IDice _dice1;
         private IDice _dice2;
+        private IPlayer _player;
 
-        public DiceGameModel(IDice dice1, IDice dice2)
+        public DiceGameModel(IDice dice1, IDice dice2, IPlayer player)
         {
             Dice1 = dice1;
             Dice2 = dice2;
+            Player = player;
         }
 
         public IDice Dice1
@@ -32,9 +34,18 @@ namespace DiceGame.Model
             }
         }
 
+        public IPlayer Player
+        {
+            get { return _player; }
+            set
+            {
+                _player = value;
+            }
+        }
+
         public int getPlayerPoints()
         {
-            return 0;
+            return Player.getPlayerPoints();
         }
 
         public void runGame(string bettedMoney)
