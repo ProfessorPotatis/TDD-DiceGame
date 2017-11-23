@@ -37,6 +37,8 @@ namespace DiceGame.Controller
 
             if (View.userQuits() == false)
             {
+                Model.getPlayerPoints();
+
                 View.showBetting();
 
                 string bet = View.getUserBet();

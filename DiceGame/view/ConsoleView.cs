@@ -38,6 +38,11 @@ namespace DiceGame.View
             Console.WriteLine(QUIT);
         }
 
+        public void showPlayerPoints(int points)
+        {
+            
+        }
+
         public void showBetting()
         {
             Console.WriteLine(BET);

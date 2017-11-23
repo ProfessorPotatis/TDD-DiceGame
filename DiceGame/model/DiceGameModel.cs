@@ -32,6 +32,11 @@ namespace DiceGame.Model
             }
         }
 
+        public int getPlayerPoints()
+        {
+            return 0;
+        }
+
         public void runGame(string bettedMoney)
         {
             int[] dice = this.rollDice();

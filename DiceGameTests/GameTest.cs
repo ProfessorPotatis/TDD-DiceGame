@@ -11,6 +11,7 @@ namespace DiceGameTests
     {
         private Mock<IConsoleView> mockView;
         private Mock<IDiceGameModel> mockModel;
+        private Mock<IPlayer> mockPlayer;
         private Game sut;
 
         // Setup
@@ -18,6 +19,7 @@ namespace DiceGameTests
         {
             mockView = new Mock<IConsoleView>();
             mockModel = new Mock<IDiceGameModel>();
+            mockPlayer = new Mock<IPlayer>();
             sut = new Game(mockView.Object, mockModel.Object);
         }
 
@@ -42,6 +44,29 @@ namespace DiceGameTests
 
             mockView.Verify(view => view.showMenu());
             mockView.Verify(view => view.showBetting());
+        }
+
+        [Fact]
+        public void shouldGetPlayerPoints()
+        {
+            mockView.Setup(mock => mock.userQuits()).Returns(false);
+
+            sut.run();
+
+            mockModel.Verify(model => model.getPlayerPoints());
+            mockPlayer.Verify(player => player.getPlayerPoints());
+        }
+
+        [Fact]
+        public void shouldShowPlayerPoints()
+        {
+            int points = 100;
+
+            mockModel.Setup(model => model.getPlayerPoints()).Returns(points);
+
+            sut.run();
+
+            mockView.Verify(view => view.showPlayerPoints(points));
         }
 
         [Fact]
