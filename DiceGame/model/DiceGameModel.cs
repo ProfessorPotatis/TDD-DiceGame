@@ -5,10 +5,14 @@ namespace DiceGame.Model
 {
     public class DiceGameModel : IDiceGameModel
     {
-        public bool runGame(string bettedMoney)
+        public void runGame(string bettedMoney)
         {
-            return false;
+            
         }
 
+        public void rollDice()
+        {
+            
+        }
     }
 }

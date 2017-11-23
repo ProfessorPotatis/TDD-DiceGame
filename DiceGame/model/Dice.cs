@@ -5,9 +5,9 @@ namespace DiceGame.Model
 {
     public class Dice : IDice
     {
-        public void rollDice()
+        public int rollDice()
         {
-
+            return 0;
         }
 
     }

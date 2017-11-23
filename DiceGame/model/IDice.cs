@@ -4,6 +4,6 @@ namespace DiceGame.Model
 {
     public interface IDice
     {
-        void rollDice();
+        int rollDice();
     }
 }
