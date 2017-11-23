@@ -13,5 +13,6 @@
     <Content Include="ConsoleViewTest.cs" />
     <Content Include="GameTest.cs" />
     <Content Include="DiceGameModelTest.cs" />
+    <Content Include="DiceTest.cs" />
   </ItemGroup>
 </Project>
