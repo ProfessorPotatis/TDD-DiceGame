@@ -64,7 +64,6 @@ namespace DiceGameTests
             sut.run();
 
             mockModel.Verify(model => model.runGame(inputMoney));
-            mockModel.Verify(model => model.rollDice(), Times.Exactly(2));
         }
     }
 }
