@@ -12,6 +12,8 @@
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string QUIT = &quot;Thank you for playing and welcome back next time&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string BET = &quot;Place your bet: &quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string QUIT_OPTION = &quot;q&quot;;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public const string YOU_BET = &quot;\nYou bet: &quot;;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public const string ROLL = &quot;\nRolling the dice...&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">        public ConsoleView(StringWriter output)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
@@ -57,8 +59,13 @@
 <div style="white-space: pre;background-color: #EEF4ED;">        public string getUserBet()</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
 <div style="white-space: pre;background-color: #D2EACE;">            string bet = Console.ReadLine();</div>
-<div style="white-space: pre;background-color: #D2EACE;">            Console.WriteLine(&quot;{0}&quot;, bet);</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Console.WriteLine(YOU_BET + &quot;{0}&quot;, bet);</div>
 <div style="white-space: pre;background-color: #D2EACE;">            return bet;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public void showRollMessage()</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Console.WriteLine(ROLL);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">}</div>
