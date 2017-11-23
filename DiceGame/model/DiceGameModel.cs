@@ -34,13 +34,24 @@ namespace DiceGame.Model
 
         public void runGame(string bettedMoney)
         {
-            this.rollDice();
+            int[] dice = this.rollDice();
+
+            int sumOfDice = sumDice(dice[0], dice[1]);
         }
 
-        public void rollDice()
+        public int[] rollDice()
         {
             int d1 = Dice1.rollDice();
             int d2 = Dice2.rollDice();
+
+            int[] dice = {d1, d2};
+
+            return dice;
+        }
+
+        public int sumDice(int d1, int d2)
+        {
+            return d1 + d2;
         }
     }
 }

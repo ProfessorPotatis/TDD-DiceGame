@@ -10,11 +10,13 @@ namespace DiceGame.View
         public const string QUIT = "Thank you for playing and welcome back next time";
         public const string BET = "Place your bet: ";
         public const string QUIT_OPTION = "q";
+        public const string YOU_BET = "You bet: ";
+        public const string ROLL = "Rolling the dice...";
 
         public ConsoleView(StringWriter output)
         {
             Output = output;
-            Console.SetOut(Output); // Only for testing
+            //Console.SetOut(Output); // Only for testing
         }
 
         public StringWriter Output
@@ -55,8 +57,13 @@ namespace DiceGame.View
         public string getUserBet()
         {
             string bet = Console.ReadLine();
-            Console.WriteLine("{0}", bet);
+            Console.WriteLine(YOU_BET + "{0}", bet);
             return bet;
+        }
+
+        public void showRollMessage()
+        {
+            
         }
     }
 }

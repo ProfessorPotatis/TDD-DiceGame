@@ -52,9 +52,17 @@ namespace DiceGameTests
 
                 string bet = sut.getUserBet();
 
-                stringWriter.Verify(sw => sw.WriteLine(bet));
+                stringWriter.Verify(sw => sw.WriteLine(ConsoleView.YOU_BET + bet));
                 Assert.Equal(bet, "1000");
             }
+        }
+
+        [Fact]
+        public void shouldShowRollMessage()
+        {
+            sut.showRollMessage();
+
+            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.ROLL));
         }
 
         [Fact]
@@ -81,6 +89,12 @@ namespace DiceGameTests
 
                 Assert.Equal(userQuits, false);
             }
+        }
+
+        [Fact]
+        public void shouldShowDiceValue()
+        {
+
         }
 
         public void Dispose()

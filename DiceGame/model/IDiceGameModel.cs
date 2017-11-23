@@ -5,6 +5,7 @@ namespace DiceGame.Model
     public interface IDiceGameModel
     {
         void runGame(string bettedMoney);
-        void rollDice();
+        int[] rollDice();
+        int sumDice(int dice1, int dice2);
     }
 }
