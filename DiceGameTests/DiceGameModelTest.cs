@@ -44,9 +44,11 @@ namespace DiceGameTests
         }
 
         [Fact]
-        public void shouldRollTwoDice()
+        public void shouldNotRollDiceWhenBetIsHigherThanPoints()
         {
-            string inputBet = "10";
+            string inputBet = "120";
+
+            //mockPlayer.Setup(player => player.checkBetting(inputBet)).Returns(false);
 
             sut.runGame(inputBet);
 

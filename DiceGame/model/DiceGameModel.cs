@@ -52,9 +52,12 @@ namespace DiceGame.Model
         {
             bool betOk = this.checkBetting(bettedMoney);
 
-            int[] dice = this.rollDice();
+            if (betOk)
+            {
+                int[] dice = this.rollDice();
 
-            int sumOfDice = sumDice(dice[0], dice[1]);
+                int sumOfDice = sumDice(dice[0], dice[1]);
+            }
         }
 
         public bool checkBetting(string bet)
