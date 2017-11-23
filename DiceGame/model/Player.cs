@@ -12,7 +12,14 @@ namespace DiceGame.Model
 
         public bool checkBetting(string bet)
         {
-            return false;
+            int theBet = int.Parse(bet);
+            int points = this.getPlayerPoints();
+
+            if (theBet > points)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

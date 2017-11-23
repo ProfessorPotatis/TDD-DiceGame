@@ -24,7 +24,7 @@ namespace DiceGameTests
         }
 
         [Fact]
-        public void shouldCheckBetting()
+        public void shouldCheckBettingAndReturnTrue()
         {
             string bet = "20";
 
