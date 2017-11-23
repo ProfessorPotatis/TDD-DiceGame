@@ -55,6 +55,16 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldShowRollMessage()
+        {
+            mockView.Setup(mock => mock.getUserBet()).Returns("10");
+
+            sut.run();
+
+            mockView.Verify(view => view.showRollMessage());
+        }
+
+        [Fact]
         public void shouldHandleGameRules()
         {
             string inputMoney = "10";

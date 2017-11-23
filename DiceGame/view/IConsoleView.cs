@@ -9,5 +9,6 @@ namespace DiceGame.View
         void showBetting();
         bool userQuits();
         string getUserBet();
+        void showRollMessage();
     }
 }
