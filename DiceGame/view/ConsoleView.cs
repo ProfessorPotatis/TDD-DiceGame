@@ -40,7 +40,7 @@ namespace DiceGame.View
 
         public void showPlayerPoints(int points)
         {
-            Console.WriteLine("Player has {0} points.");
+            Console.WriteLine("Player has {0} points.", points);
         }
 
         public void showBetting()
