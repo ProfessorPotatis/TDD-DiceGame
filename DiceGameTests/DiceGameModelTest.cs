@@ -48,7 +48,20 @@ namespace DiceGameTests
         {
             string inputBet = "120";
 
-            //mockPlayer.Setup(player => player.checkBetting(inputBet)).Returns(false);
+            mockPlayer.Setup(player => player.checkBetting(inputBet)).Returns(false);
+
+            sut.runGame(inputBet);
+
+            mockDice1.Verify(dice1 => dice1.rollDice(), Times.Never());
+            mockDice2.Verify(dice2 => dice2.rollDice(), Times.Never());
+        }
+
+        [Fact]
+        public void shouldRollDiceWhenBetIsLowerThanPoints()
+        {
+            string inputBet = "10";
+
+            mockPlayer.Setup(player => player.checkBetting(inputBet)).Returns(true);
 
             sut.runGame(inputBet);
 
