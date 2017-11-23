@@ -10,8 +10,8 @@ namespace DiceGame.View
         public const string QUIT = "Thank you for playing and welcome back next time";
         public const string BET = "Place your bet: ";
         public const string QUIT_OPTION = "q";
-        public const string YOU_BET = "You bet: ";
-        public const string ROLL = "Rolling the dice...";
+        public const string YOU_BET = "\nYou bet: ";
+        public const string ROLL = "\nRolling the dice...";
 
         public ConsoleView(StringWriter output)
         {
