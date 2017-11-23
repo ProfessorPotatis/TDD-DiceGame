@@ -36,6 +36,16 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldShowPlayerPoints()
+        {
+            int points = 100;
+
+            sut.showPlayerPoints(points);
+
+            stringWriter.Verify(sw => sw.WriteLine("Player has " + points + " points."));
+        }
+
+        [Fact]
         public void shouldShowBetting()
         {
             sut.showBetting();
