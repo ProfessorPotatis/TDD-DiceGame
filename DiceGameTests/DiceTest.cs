@@ -18,11 +18,22 @@ namespace DiceGameTests
         }
 
         [Fact]
-        public void shouldRollSixSidedDice()
+        public void shouldRollSixSidedDie()
         {
             int actual = sut.rollDice();
 
             Assert.InRange(actual, 1, 6);
+        }
+
+        [Fact]
+        public void shouldRollTwoSixSidedDie()
+        {
+            int die1 = sut.rollDice();
+            int die2 = sut.rollDice();
+
+            Assert.InRange(die1, 1, 6);
+            Assert.InRange(die2, 1, 6);
+            Assert.NotEqual(die1, die2);
         }
     }
 }
