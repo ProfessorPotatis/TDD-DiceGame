@@ -78,5 +78,15 @@ namespace DiceGameTests
 
             Assert.Equal(7, actual);
         }
+
+        [Fact]
+        public void shouldReturnTrueIfSumOfDiceIsSeven()
+        {            
+            int sumOfDice = 7;
+
+            bool actual = sut.isWinner(sumOfDice);
+
+            Assert.True(actual);
+        }
     }
 }
