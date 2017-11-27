@@ -44,6 +44,14 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldThrowExceptionWhenBetIsOutOfRange()
+        {
+            string inputBet = "101";
+
+            Assert.Throws<ArgumentOutOfRangeException>(() => sut.runGame(inputBet));
+        }
+
+        [Fact]
         public void shouldNotRollDiceWhenBetIsHigherThanPoints()
         {
             string inputBet = "120";

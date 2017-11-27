@@ -33,24 +33,30 @@ namespace DiceGame.Controller
 
         public void run()
         {
-            View.showMenu();
-
-            if (View.userQuits() == false)
+            try
             {
-                int points = Model.getPlayerPoints();
+                View.showMenu();
 
-                View.showPlayerPoints(points);
+                if (View.userQuits() == false)
+                {
+                    int points = Model.getPlayerPoints();
 
-                View.showBetting();
+                    View.showPlayerPoints(points);
 
-                string bet = View.getUserBet();
+                    View.showBetting();
 
-                View.showRollMessage();
+                    string bet = View.getUserBet();
 
-                Model.runGame(bet);
+                    View.showRollMessage();
+
+                    Model.runGame(bet);
+                }
+
+                View.showQuitMessage();
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
-
-            View.showQuitMessage();
         }
         
     }
