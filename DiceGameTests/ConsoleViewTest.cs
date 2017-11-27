@@ -102,6 +102,14 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldShowExceptionMessage()
+        {
+            sut.showException("\nBet is out of range.");
+
+            stringWriter.Verify(sw => sw.WriteLine("\nBet is out of range."));
+        }
+
+        [Fact]
         public void shouldShowDiceValue()
         {
 
