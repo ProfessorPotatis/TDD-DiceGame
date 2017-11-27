@@ -57,6 +57,9 @@ namespace DiceGame.Model
                 int[] dice = this.rollDice();
 
                 int sumOfDice = sumDice(dice[0], dice[1]);
+            } else
+            {
+                throw new ArgumentOutOfRangeException("", "\nBet is out of range.");
             }
         }
 

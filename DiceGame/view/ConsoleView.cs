@@ -70,5 +70,10 @@ namespace DiceGame.View
         {
             Console.WriteLine(ROLL);
         }
+
+        public void showException(string message)
+        {
+            Console.WriteLine(message);
+        }
     }
 }

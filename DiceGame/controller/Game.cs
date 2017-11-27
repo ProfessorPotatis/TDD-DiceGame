@@ -55,7 +55,7 @@ namespace DiceGame.Controller
                 View.showQuitMessage();
             } catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                View.showException(ex.Message);
             }
         }
         
