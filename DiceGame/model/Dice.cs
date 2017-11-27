@@ -26,5 +26,9 @@ namespace DiceGame.Model
             return Die.Next(1, 7);;
         }
 
+        public int sumDice(int d1, int d2)
+        {
+            return d1 + d2;
+        }
     }
 }

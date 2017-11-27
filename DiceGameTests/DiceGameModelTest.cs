@@ -68,5 +68,15 @@ namespace DiceGameTests
             mockDice1.Verify(dice1 => dice1.rollDice());
             mockDice2.Verify(dice2 => dice2.rollDice());
         }
+
+        [Fact]
+        public void shouldSumRolledDice()
+        {
+            int[] dice = {3, 4};
+
+            int actual = sut.sumDice(dice[0], dice[1]);
+
+            Assert.Equal(7, actual);
+        }
     }
 }

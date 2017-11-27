@@ -77,7 +77,8 @@ namespace DiceGame.Model
 
         public int sumDice(int d1, int d2)
         {
-            return d1 + d2;
+            int sum = Dice2.sumDice(d1, d2);
+            return sum;
         }
     }
 }
