@@ -80,5 +80,14 @@ namespace DiceGame.Model
             int sum = d1 + d2;
             return sum;
         }
+
+        public bool isWinner(int sum)
+        {
+            if (sum == 7)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
