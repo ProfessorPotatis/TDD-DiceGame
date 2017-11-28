@@ -99,5 +99,21 @@ namespace DiceGameTests
 
             mockModel.Verify(model => model.runGame(inputMoney));
         }
+
+        [Fact]
+        public void shouldCatchExpectionAndShowExceptionMessage()
+        {
+            try
+            {
+                string inputMoney = "120";
+
+                mockModel.Setup(mock => mock.runGame(inputMoney)).Throws(new ArgumentOutOfRangeException());
+
+                sut.run();
+            } catch(Exception ex)
+            {
+                mockView.Verify(view => view.showException(ex.Message));
+            }
+        }
     }
 }
