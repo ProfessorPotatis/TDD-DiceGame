@@ -38,7 +38,7 @@ namespace DiceGameTests
         {
             string inputBet = "10";
 
-            sut.runGame(inputBet);
+            sut.checkBetting(inputBet);
 
             mockPlayer.Verify(player => player.checkBetting(inputBet));
         }
@@ -58,7 +58,7 @@ namespace DiceGameTests
 
             mockPlayer.Setup(player => player.checkBetting(inputBet)).Returns(false);
 
-            sut.runGame(inputBet);
+            Assert.Throws<ArgumentOutOfRangeException>(() => sut.runGame(inputBet));
 
             mockDice1.Verify(dice1 => dice1.rollDice(), Times.Never());
             mockDice2.Verify(dice2 => dice2.rollDice(), Times.Never());

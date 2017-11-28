@@ -35,24 +35,30 @@
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public void run()</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
-<div style="white-space: pre;background-color: #D2EACE;">            View.showMenu();</div>
-<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">            if (View.userQuits() == false)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            try</div>
 <div style="white-space: pre;background-color: #EEF4ED;">            {</div>
-<div style="white-space: pre;background-color: #D2EACE;">                int points = Model.getPlayerPoints();</div>
+<div style="white-space: pre;background-color: #D2EACE;">                View.showMenu();</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">                View.showPlayerPoints(points);</div>
+<div style="white-space: pre;background-color: #D2EACE;">                if (View.userQuits() == false)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    int points = Model.getPlayerPoints();</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">                View.showBetting();</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    View.showPlayerPoints(points);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">                string bet = View.getUserBet();</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    View.showBetting();</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">                View.showRollMessage();</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    string bet = View.getUserBet();</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">                Model.runGame(bet);</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    View.showRollMessage();</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    Model.runGame(bet);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                View.showQuitMessage();</div>
+<div style="white-space: pre;background-color: #EACECC;">            } catch (Exception ex)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #EACECC;">                View.showException(ex.Message);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">            }</div>
-<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">            View.showQuitMessage();</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        </div>
 <div style="white-space: pre;background-color: #EEF4ED;">    }</div>

@@ -33,7 +33,6 @@ namespace DiceGameTests
 
             Assert.InRange(die1, 1, 6);
             Assert.InRange(die2, 1, 6);
-            Assert.NotEqual(die1, die2);
         }
     }
 }
