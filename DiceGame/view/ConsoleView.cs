@@ -78,7 +78,7 @@ namespace DiceGame.View
 
         public void showWinner(bool isWinner)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("You are a winner!");
         }
     }
 }
