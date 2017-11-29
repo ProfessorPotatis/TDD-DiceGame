@@ -41,7 +41,7 @@ namespace DiceGame.Model
 
         public void addPoints(int plusPoints)
         {
-            throw new NotImplementedException();
+            Points += plusPoints;
         }
     }
 }
