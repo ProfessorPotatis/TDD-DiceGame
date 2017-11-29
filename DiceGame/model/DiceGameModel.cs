@@ -78,9 +78,11 @@ namespace DiceGame.Model
             return false;
         }
 
-        public void updatePoints(bool isWinner)
+        public void updatePoints(bool isWinner, string bet)
         {
-            throw new NotImplementedException();
+            int theBet = int.Parse(bet);
+
+            Player.addPoints(theBet);
         }
     }
 }

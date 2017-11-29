@@ -9,6 +9,6 @@ namespace DiceGame.Model
         int[] rollDice();
         int sumDice(int dice1, int dice2);
         bool isWinner(int sum);
-        void updatePoints(bool isWinner);
+        void updatePoints(bool isWinner, string points);
     }
 }

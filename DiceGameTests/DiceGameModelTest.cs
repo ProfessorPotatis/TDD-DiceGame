@@ -111,9 +111,10 @@ namespace DiceGameTests
         public void shouldAddPointsWhenPlayerIsWinner()
         {
             bool isWinner = true;
+            string bet = "10";
             int plusPoints = 10;
 
-            sut.updatePoints(isWinner);
+            sut.updatePoints(isWinner, bet);
 
             mockPlayer.Verify(player => player.addPoints(plusPoints));
         }
