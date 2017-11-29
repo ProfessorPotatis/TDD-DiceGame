@@ -7,32 +7,14 @@ using DiceGame.Controller;
 
 namespace DiceGameTests
 {
-    public class GameTest
+    public class GameTest : SetupForGameTest
     {
-        private Mock<IConsoleView> mockView;
-        private Mock<IDiceGameModel> mockModel;
-        private Mock<IPlayer> mockPlayer;
-        private Game sut;
+        
 
         // Setup
-        public GameTest()
+        public override void Setup()
         {
-            mockView = new Mock<IConsoleView>();
-            mockModel = new Mock<IDiceGameModel>();
-            mockPlayer = new Mock<IPlayer>();
-            sut = new Game(mockView.Object, mockModel.Object);
-        }
-
-        [Fact]
-        public void shouldShowMenuAndQuit()
-        {
-            mockView.Setup(mock => mock.userQuits()).Returns(true);
-
-            sut.run();
-
-            mockView.Verify(view => view.showMenu());
-            mockView.Verify(view => view.showBetting(), Times.Never());
-            mockView.Verify(view => view.showQuitMessage());
+            
         }
 
         [Fact]
@@ -100,20 +82,28 @@ namespace DiceGameTests
             mockModel.Verify(model => model.runGame(inputMoney));
         }
 
+
+        // THIS TEST MIGHT BE GIVING FALSE POSITIVE RESULT!!
         [Fact]
         public void shouldCatchExpectionAndShowExceptionMessage()
         {
+            mockView = new Mock<IConsoleView>();
+            mockModel = new Mock<IDiceGameModel>();
+
             try
             {
-                string inputMoney = "120";
+                mockModel.Setup(mock => mock.runGame("200")).Throws(new ArgumentOutOfRangeException());
 
-                mockModel.Setup(mock => mock.runGame(inputMoney)).Throws(new ArgumentOutOfRangeException());
+                sut = new Game(mockView.Object, mockModel.Object);
 
                 sut.run();
-            } catch(Exception ex)
+                //Assert.True(false);
+            } catch (ArgumentOutOfRangeException)
             {
-                mockView.Verify(view => view.showException(ex.Message));
-            }
+                Assert.False(true);
+            }    
+
+            mockView.Verify(view => view.showException(It.IsAny<string>()));       
         }
     }
 }

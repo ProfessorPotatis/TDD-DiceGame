@@ -53,7 +53,7 @@ namespace DiceGame.Controller
                 }
 
                 View.showQuitMessage();
-            } catch (Exception ex)
+            } catch (ArgumentOutOfRangeException ex)
             {
                 View.showException(ex.Message);
             }
