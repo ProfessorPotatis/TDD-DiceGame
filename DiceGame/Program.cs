@@ -5,7 +5,7 @@ namespace DiceGame
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             StringWriter stringWriter = new StringWriter();
             View.IConsoleView view = new View.ConsoleView(stringWriter);

@@ -47,9 +47,9 @@ namespace DiceGame.Controller
 
                     string bet = View.getUserBet();
 
-                    View.showRollMessage();
-
                     Model.runGame(bet);
+
+                    View.showRollMessage();
                 }
 
                 View.showQuitMessage();
