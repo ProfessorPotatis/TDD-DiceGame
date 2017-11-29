@@ -5,16 +5,26 @@ namespace DiceGame.Model
 {
     public class Player : IPlayer
     {
-        private int points;
+        private const int STARTING_POINTS = 100;
+        private int _points;
 
         public Player()
         {
-            points = 100;
+            Points = STARTING_POINTS;
+        }
+
+        public int Points
+        {
+            get { return _points; }
+            set
+            {
+                _points = value;
+            }
         }
 
         public int getPlayerPoints()
         {
-            return points;
+            return Points;
         }
 
         public bool checkBetting(string bet)
@@ -27,6 +37,11 @@ namespace DiceGame.Model
                 throw new ArgumentOutOfRangeException("", "\nBet is out of range.");
             }
             return true;
+        }
+
+        public void addPoints(int plusPoints)
+        {
+            throw new NotImplementedException();
         }
     }
 }

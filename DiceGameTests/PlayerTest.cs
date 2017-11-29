@@ -40,5 +40,17 @@ namespace DiceGameTests
 
             Assert.Throws<ArgumentOutOfRangeException>(() => sut.checkBetting(bet));
         }
+
+        [Fact]
+        public void shouldAddPoints()
+        {
+            int plusPoints = 10;
+
+            sut.addPoints(plusPoints);
+
+            int actual = sut.getPlayerPoints();
+
+            Assert.Equal(110, actual);
+        }
     }
 }
