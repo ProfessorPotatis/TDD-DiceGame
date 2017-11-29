@@ -14,6 +14,8 @@
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string QUIT_OPTION = &quot;q&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string YOU_BET = &quot;\nYou bet: &quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string ROLL = &quot;\nRolling the dice...&quot;;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public const string WINNER = &quot;\nYou are a winner!&quot;;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public const string LOSER = &quot;\nYou lost.&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">        public ConsoleView(StringWriter output)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
@@ -76,6 +78,17 @@
 <div style="white-space: pre;background-color: #EEF4ED;">        public void showException(string message)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
 <div style="white-space: pre;background-color: #D2EACE;">            Console.WriteLine(message);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public void showWinner(bool isWinner)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            if (isWinner)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                Console.WriteLine(WINNER);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            } else</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                Console.WriteLine(LOSER);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">}</div>
