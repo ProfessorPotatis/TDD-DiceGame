@@ -37,7 +37,7 @@ namespace DiceGame.Controller
             {
                 View.showMenu();
 
-                if (View.userQuits() == false)
+                while (View.userQuits() == false)
                 {
                     int points = Model.getPlayerPoints();
 
