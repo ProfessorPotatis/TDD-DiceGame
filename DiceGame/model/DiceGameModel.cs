@@ -82,7 +82,13 @@ namespace DiceGame.Model
         {
             int theBet = int.Parse(bet);
 
-            Player.addPoints(theBet);
+            if (isWinner)
+            {
+                Player.addPoints(theBet);
+            } else
+            {
+                Player.removePoints(theBet);
+            }
         }
     }
 }
