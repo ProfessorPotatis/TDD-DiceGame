@@ -47,9 +47,11 @@ namespace DiceGame.Controller
 
                     string bet = View.getUserBet();
 
-                    Model.runGame(bet);
+                    bool isWinner = Model.runGame(bet);
 
                     View.showRollMessage();
+
+                    View.showWinner(isWinner);
                 }
 
                 View.showQuitMessage();
