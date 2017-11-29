@@ -91,7 +91,8 @@ namespace DiceGame.View
 
         public void showDiceValues(int dice1, int dice2)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("\nDice 1: {0}", dice1);
+            Console.WriteLine("\nDice 2: {0}", dice2);
         }
     }
 }
