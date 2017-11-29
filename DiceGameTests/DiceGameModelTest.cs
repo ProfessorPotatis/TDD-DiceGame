@@ -118,5 +118,17 @@ namespace DiceGameTests
 
             mockPlayer.Verify(player => player.addPoints(plusPoints));
         }
+
+        [Fact]
+        public void shouldRemovePointsWhenPlayerIsLoser()
+        {
+            bool isWinner = false;
+            string bet = "60";
+            int minusPoints = 60;
+
+            sut.updatePoints(isWinner, bet);
+
+            mockPlayer.Verify(player => player.removePoints(minusPoints));
+        }
     }
 }
