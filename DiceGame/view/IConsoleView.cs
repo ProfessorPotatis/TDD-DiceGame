@@ -12,5 +12,6 @@ namespace DiceGame.View
         string getUserBet();
         void showRollMessage();
         void showException(string message);
+        void showWinner(bool isWinner);
     }
 }

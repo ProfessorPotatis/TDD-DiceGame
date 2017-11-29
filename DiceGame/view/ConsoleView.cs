@@ -16,7 +16,7 @@ namespace DiceGame.View
         public ConsoleView(StringWriter output)
         {
             Output = output;
-            //Console.SetOut(Output); // Only for testing
+            Console.SetOut(Output); // Only for testing
         }
 
         public StringWriter Output
@@ -74,6 +74,11 @@ namespace DiceGame.View
         public void showException(string message)
         {
             Console.WriteLine(message);
+        }
+
+        public void showWinner(bool isWinner)
+        {
+            throw new NotImplementedException();
         }
     }
 }

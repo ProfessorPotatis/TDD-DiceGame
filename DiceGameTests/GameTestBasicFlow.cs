@@ -11,6 +11,7 @@ namespace DiceGameTests
     {
         private int points;
         private string inputBet;
+        private bool isWinner;
 
         // Setup
         public override void Setup()
@@ -22,6 +23,9 @@ namespace DiceGameTests
 
             inputBet = "10";
             mockView.Setup(mock => mock.getUserBet()).Returns(inputBet);
+
+            isWinner = true;
+            mockModel.Setup(mock => mock.runGame(inputBet)).Returns(isWinner);
         }
 
         [Fact]
@@ -78,6 +82,14 @@ namespace DiceGameTests
             sut.run();
 
             mockModel.Verify(model => model.runGame(inputBet));
+        }
+
+        [Fact]
+        public void shouldShowWinner()
+        {
+            sut.run();
+
+            mockView.Verify(view => view.showWinner(isWinner));
         }
     }
 }
