@@ -37,30 +37,22 @@ namespace DiceGame.Controller
             {
                 View.showMenu();
 
-                if (View.userQuits() == false)
+                while (View.userQuits() == false)
                 {
                     int points = Model.getPlayerPoints();
-
                     View.showPlayerPoints(points);
 
                     View.showBetting();
-
                     string bet = View.getUserBet();
-
                     Model.checkBetting(bet);
 
                     View.showRollMessage();
-
                     int[] dice = Model.rollDice();
-
                     View.showDiceValues(dice);
-
                     int sumDice = Model.sumDice(dice[0], dice[1]);
 
                     bool isWinner = Model.isWinner(sumDice);
-
                     Model.updatePoints(isWinner, bet);
-
                     View.showWinner(isWinner);
                 }
 
