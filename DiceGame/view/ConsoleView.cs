@@ -13,6 +13,7 @@ namespace DiceGame.View
         public const string YOU_BET = "\nYou bet: ";
         public const string ROLL = "\nRolling the dice...";
         public const string WINNER = "\nYou are a winner!";
+        public const string LOSER = "\nYou lost.";
 
         public ConsoleView(StringWriter output)
         {
@@ -84,7 +85,7 @@ namespace DiceGame.View
                 Console.WriteLine(WINNER);
             } else
             {
-                Console.WriteLine("You lost.");
+                Console.WriteLine(LOSER);
             }
         }
     }

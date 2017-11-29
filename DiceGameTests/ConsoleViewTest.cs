@@ -126,7 +126,7 @@ namespace DiceGameTests
 
             sut.showWinner(isWinner);
 
-            stringWriter.Verify(sw => sw.WriteLine("You lost."));
+            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.LOSER));
         }
 
         [Fact]
