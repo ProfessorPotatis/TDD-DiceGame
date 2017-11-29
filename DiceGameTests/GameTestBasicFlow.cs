@@ -118,6 +118,14 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldUpdatePoints()
+        {
+            sut.run();
+
+            mockModel.Verify(model => model.updatePoints(isWinner, inputBet));
+        }
+
+        [Fact]
         public void shouldShowWinner()
         {
             sut.run();

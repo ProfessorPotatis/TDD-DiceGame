@@ -37,7 +37,7 @@ namespace DiceGame.Controller
             {
                 View.showMenu();
 
-                while (View.userQuits() == false)
+                if (View.userQuits() == false)
                 {
                     int points = Model.getPlayerPoints();
 
@@ -59,7 +59,7 @@ namespace DiceGame.Controller
 
                     bool isWinner = Model.isWinner(sumDice);
 
-                    Model.updatePoints(isWinner, bet);
+                    //Model.updatePoints(isWinner, bet);
 
                     View.showWinner(isWinner);
                 }
