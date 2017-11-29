@@ -52,5 +52,17 @@ namespace DiceGameTests
 
             Assert.Equal(110, actual);
         }
+
+        [Fact]
+        public void shouldRemovePoints()
+        {
+            int minusPoints = 30;
+
+            sut.removePoints(minusPoints);
+
+            int actual = sut.getPlayerPoints();
+
+            Assert.Equal(70, actual);
+        }
     }
 }

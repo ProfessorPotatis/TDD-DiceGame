@@ -7,5 +7,6 @@ namespace DiceGame.Model
         int getPlayerPoints();
         bool checkBetting(string bet);
         void addPoints(int plusPoints);
+        void removePoints(int minusPoints);
     }
 }

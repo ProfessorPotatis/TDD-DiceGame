@@ -43,5 +43,11 @@ namespace DiceGame.Model
         {
             Points += plusPoints;
         }
+
+        public void removePoints(int minusPoints)
+        {
+            throw new NotImplementedException();
+            //Points += minusPoints;
+        }
     }
 }
