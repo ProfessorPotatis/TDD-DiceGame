@@ -2,6 +2,7 @@
 <body style="font-family: sans-serif;">
 <div style="white-space: pre;background-color: #EEF4ED;">using System;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">using System.IO;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">using System.Threading;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">namespace DiceGame.View</div>
 <div style="white-space: pre;background-color: #EEF4ED;">{</div>
@@ -89,6 +90,14 @@
 <div style="white-space: pre;background-color: #EEF4ED;">            {</div>
 <div style="white-space: pre;background-color: #D2EACE;">                Console.WriteLine(LOSER);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">            }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public void showDiceValues(int[] dice)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Thread.Sleep(1500);</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Console.WriteLine(&quot;\nDice 1: {0}&quot;, dice[0]);</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Thread.Sleep(1500);</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Console.WriteLine(&quot;Dice 2: {0}&quot;, dice[1]);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">}</div>

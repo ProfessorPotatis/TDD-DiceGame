@@ -88,10 +88,10 @@ namespace DiceGameTests
         {
             int[] dice = {1, 5};
 
-            sut.showDiceValues(dice[0], dice[1]);
+            sut.showDiceValues(dice);
 
             stringWriter.Verify(sw => sw.WriteLine("\nDice 1: " + dice[0]));
-            stringWriter.Verify(sw => sw.WriteLine("\nDice 2: " + dice[1]));
+            stringWriter.Verify(sw => sw.WriteLine("Dice 2: " + dice[1]));
         }
 
         [Fact]

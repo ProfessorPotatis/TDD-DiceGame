@@ -49,9 +49,17 @@
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">                    string bet = View.getUserBet();</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">                    bool isWinner = Model.runGame(bet);</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    Model.checkBetting(bet);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">                    View.showRollMessage();</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    int[] dice = Model.rollDice();</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    View.showDiceValues(dice);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    int sumDice = Model.sumDice(dice[0], dice[1]);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    bool isWinner = Model.isWinner(sumDice);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">                    View.showWinner(isWinner);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">                }</div>

@@ -50,23 +50,6 @@
 <div style="white-space: pre;background-color: #D2EACE;">            return Player.getPlayerPoints();</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        public bool runGame(string bettedMoney)</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
-<div style="white-space: pre;background-color: #D2EACE;">            bool betOk = this.checkBetting(bettedMoney);</div>
-<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">            if (betOk)</div>
-<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
-<div style="white-space: pre;background-color: #D2EACE;">                int[] dice = this.rollDice();</div>
-<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">                int sumOfDice = sumDice(dice[0], dice[1]);</div>
-<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">                return true;</div>
-<div style="white-space: pre;background-color: #EEF4ED;">            } else</div>
-<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
-<div style="white-space: pre;background-color: #D2EACE;">                throw new ArgumentOutOfRangeException(&quot;&quot;, &quot;\nBet is out of range.&quot;);</div>
-<div style="white-space: pre;background-color: #EEF4ED;">            }</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
-<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public bool checkBetting(string bet)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
 <div style="white-space: pre;background-color: #D2EACE;">            return Player.checkBetting(bet);</div>

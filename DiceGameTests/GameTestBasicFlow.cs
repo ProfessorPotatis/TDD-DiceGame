@@ -11,6 +11,8 @@ namespace DiceGameTests
     {
         private int points;
         private string inputBet;
+        private int[] dice = {4, 3};
+        private int sum;
         private bool isWinner;
 
         // Setup
@@ -24,8 +26,15 @@ namespace DiceGameTests
             inputBet = "10";
             mockView.Setup(mock => mock.getUserBet()).Returns(inputBet);
 
+            mockModel.Setup(mock => mock.checkBetting(inputBet)).Returns(true);
+
+            mockModel.Setup(mock => mock.rollDice()).Returns(dice);
+
+            sum = 7;
+            mockModel.Setup(mock => mock.sumDice(dice[0], dice[1])).Returns(sum);
+
             isWinner = true;
-            mockModel.Setup(mock => mock.runGame(inputBet)).Returns(isWinner);
+            mockModel.Setup(mock => mock.isWinner(sum)).Returns(true);
         }
 
         [Fact]
@@ -69,6 +78,14 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldCheckBetting()
+        {
+            sut.run();
+
+            mockModel.Verify(model => model.checkBetting(inputBet));
+        }
+
+        [Fact]
         public void shouldShowRollMessage()
         {
             sut.run();
@@ -77,11 +94,27 @@ namespace DiceGameTests
         }
 
         [Fact]
-        public void shouldHandleGameRules()
+        public void shouldRollDice()
         {
             sut.run();
 
-            mockModel.Verify(model => model.runGame(inputBet));
+            mockModel.Verify(model => model.rollDice());
+        }
+
+        [Fact]
+        public void shouldShowDiceValues()
+        {
+            sut.run();
+
+            mockView.Verify(view => view.showDiceValues(dice));
+        }
+
+        [Fact]
+        public void shouldSumDice()
+        {
+            sut.run();
+
+            mockModel.Verify(model => model.sumDice(dice[0], dice[1]));
         }
 
         [Fact]

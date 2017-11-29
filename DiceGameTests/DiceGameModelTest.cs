@@ -48,7 +48,9 @@ namespace DiceGameTests
         {
             string inputBet = "101";
 
-            Assert.Throws<ArgumentOutOfRangeException>(() => sut.runGame(inputBet));
+            mockPlayer.Setup(player => player.checkBetting(inputBet)).Throws(new ArgumentOutOfRangeException());
+
+            Assert.Throws<ArgumentOutOfRangeException>(() => sut.checkBetting(inputBet));
         }
 
         [Fact]
@@ -56,9 +58,7 @@ namespace DiceGameTests
         {
             string inputBet = "120";
 
-            mockPlayer.Setup(player => player.checkBetting(inputBet)).Returns(false);
-
-            Assert.Throws<ArgumentOutOfRangeException>(() => sut.runGame(inputBet));
+            mockPlayer.Setup(player => player.checkBetting(inputBet)).Throws(new ArgumentOutOfRangeException());
 
             mockDice1.Verify(dice1 => dice1.rollDice(), Times.Never());
             mockDice2.Verify(dice2 => dice2.rollDice(), Times.Never());
@@ -71,7 +71,7 @@ namespace DiceGameTests
 
             mockPlayer.Setup(player => player.checkBetting(inputBet)).Returns(true);
 
-            sut.runGame(inputBet);
+            sut.rollDice();
 
             mockDice1.Verify(dice1 => dice1.rollDice());
             mockDice2.Verify(dice2 => dice2.rollDice());

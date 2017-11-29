@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Threading;
 
 namespace DiceGame.View
 {
@@ -89,10 +90,12 @@ namespace DiceGame.View
             }
         }
 
-        public void showDiceValues(int dice1, int dice2)
+        public void showDiceValues(int[] dice)
         {
-            Console.WriteLine("\nDice 1: {0}", dice1);
-            Console.WriteLine("\nDice 2: {0}", dice2);
+            Thread.Sleep(1500);
+            Console.WriteLine("\nDice 1: {0}", dice[0]);
+            Thread.Sleep(1500);
+            Console.WriteLine("Dice 2: {0}", dice[1]);
         }
     }
 }

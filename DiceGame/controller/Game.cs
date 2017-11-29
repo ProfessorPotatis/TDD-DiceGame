@@ -47,9 +47,17 @@ namespace DiceGame.Controller
 
                     string bet = View.getUserBet();
 
-                    bool isWinner = Model.runGame(bet);
+                    Model.checkBetting(bet);
 
                     View.showRollMessage();
+
+                    int[] dice = Model.rollDice();
+
+                    View.showDiceValues(dice);
+
+                    int sumDice = Model.sumDice(dice[0], dice[1]);
+
+                    bool isWinner = Model.isWinner(sumDice);
 
                     View.showWinner(isWinner);
                 }

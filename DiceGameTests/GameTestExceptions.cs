@@ -23,7 +23,7 @@ namespace DiceGameTests
             inputBet = "200";
             mockView.Setup(mock => mock.getUserBet()).Returns(inputBet);
 
-            mockModel.Setup(mock => mock.runGame(inputBet)).Throws(new ArgumentOutOfRangeException());
+            mockModel.Setup(mock => mock.checkBetting(inputBet)).Throws(new ArgumentOutOfRangeException());
         }
 
         [Fact]

@@ -48,23 +48,6 @@ namespace DiceGame.Model
             return Player.getPlayerPoints();
         }
 
-        public bool runGame(string bettedMoney)
-        {
-            bool betOk = this.checkBetting(bettedMoney);
-
-            if (betOk)
-            {
-                int[] dice = this.rollDice();
-
-                int sumOfDice = sumDice(dice[0], dice[1]);
-
-                return true;
-            } else
-            {
-                throw new ArgumentOutOfRangeException("", "\nBet is out of range.");
-            }
-        }
-
         public bool checkBetting(string bet)
         {
             return Player.checkBetting(bet);

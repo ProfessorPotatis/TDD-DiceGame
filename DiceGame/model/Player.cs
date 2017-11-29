@@ -17,7 +17,7 @@ namespace DiceGame.Model
 
             if (theBet > points)
             {
-                return false;
+                throw new ArgumentOutOfRangeException("", "\nBet is out of range.");
             }
             return true;
         }

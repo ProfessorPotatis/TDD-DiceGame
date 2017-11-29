@@ -19,7 +19,7 @@
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">            if (theBet &gt; points)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">            {</div>
-<div style="white-space: pre;background-color: #D2EACE;">                return false;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                throw new ArgumentOutOfRangeException(&quot;&quot;, &quot;\nBet is out of range.&quot;);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">            }</div>
 <div style="white-space: pre;background-color: #D2EACE;">            return true;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
