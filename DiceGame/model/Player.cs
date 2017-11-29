@@ -5,9 +5,16 @@ namespace DiceGame.Model
 {
     public class Player : IPlayer
     {
+        private int points;
+
+        public Player()
+        {
+            points = 100;
+        }
+
         public int getPlayerPoints()
         {
-            return 100;
+            return points;
         }
 
         public bool checkBetting(string bet)
