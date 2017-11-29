@@ -61,6 +61,8 @@
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">                    bool isWinner = Model.isWinner(sumDice);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    Model.updatePoints(isWinner, bet);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">                    View.showWinner(isWinner);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">                }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
@@ -70,7 +72,6 @@
 <div style="white-space: pre;background-color: #D2EACE;">                View.showException(ex.Message);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">            }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        </div>
 <div style="white-space: pre;background-color: #EEF4ED;">    }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">}</div>
 </body>

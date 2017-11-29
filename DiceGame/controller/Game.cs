@@ -70,6 +70,5 @@ namespace DiceGame.Controller
                 View.showException(ex.Message);
             }
         }
-        
     }
 }
