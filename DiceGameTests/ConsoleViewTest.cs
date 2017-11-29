@@ -110,6 +110,16 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldShowPlayerAsWinner()
+        {
+            bool isWinner = true;
+
+            sut.showWinner(isWinner);
+
+            stringWriter.Verify(sw => sw.WriteLine("You are a winner!"));
+        }
+
+        [Fact]
         public void shouldShowDiceValue()
         {
 
