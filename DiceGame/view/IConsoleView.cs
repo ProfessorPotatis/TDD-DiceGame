@@ -13,5 +13,6 @@ namespace DiceGame.View
         void showRollMessage();
         void showException(string message);
         void showWinner(bool isWinner);
+        void showDiceValues(int dice1, int dice2);
     }
 }

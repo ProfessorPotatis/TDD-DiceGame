@@ -88,5 +88,10 @@ namespace DiceGame.View
                 Console.WriteLine(LOSER);
             }
         }
+
+        public void showDiceValues(int dice1, int dice2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

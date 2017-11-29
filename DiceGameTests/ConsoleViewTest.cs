@@ -68,11 +68,50 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldShowExceptionMessage()
+        {
+            sut.showException("\nBet is out of range.");
+
+            stringWriter.Verify(sw => sw.WriteLine("\nBet is out of range."));
+        }
+
+        [Fact]
         public void shouldShowRollMessage()
         {
             sut.showRollMessage();
 
             stringWriter.Verify(sw => sw.WriteLine(ConsoleView.ROLL));
+        }
+
+        [Fact]
+        public void shouldShowDiceValues()
+        {
+            int[] dice = {1, 5};
+
+            sut.showDiceValues(dice[0], dice[1]);
+
+            stringWriter.Verify(sw => sw.WriteLine("\nDice 1: " + dice[0]));
+            stringWriter.Verify(sw => sw.WriteLine("\nDice 2: " + dice[1]));
+        }
+
+        [Fact]
+        public void shouldShowPlayerAsWinner()
+        {
+            bool isWinner = true;
+
+            sut.showWinner(isWinner);
+
+            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.WINNER));
+        }
+
+        [Fact]
+        public void shouldShowPlayerAsLoser()
+        {
+            bool isWinner = false;
+
+            sut.showWinner(isWinner);
+
+            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.LOSER));
         }
 
         [Fact]
@@ -99,40 +138,6 @@ namespace DiceGameTests
 
                 Assert.Equal(userQuits, false);
             }
-        }
-
-        [Fact]
-        public void shouldShowExceptionMessage()
-        {
-            sut.showException("\nBet is out of range.");
-
-            stringWriter.Verify(sw => sw.WriteLine("\nBet is out of range."));
-        }
-
-        [Fact]
-        public void shouldShowPlayerAsWinner()
-        {
-            bool isWinner = true;
-
-            sut.showWinner(isWinner);
-
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.WINNER));
-        }
-
-        [Fact]
-        public void shouldShowPlayerAsLoser()
-        {
-            bool isWinner = false;
-
-            sut.showWinner(isWinner);
-
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.LOSER));
-        }
-
-        [Fact]
-        public void shouldShowDiceValue()
-        {
-
         }
 
         public void Dispose()
