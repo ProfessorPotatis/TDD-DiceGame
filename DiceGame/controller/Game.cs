@@ -59,6 +59,8 @@ namespace DiceGame.Controller
 
                     bool isWinner = Model.isWinner(sumDice);
 
+                    Model.updatePoints(isWinner);
+
                     View.showWinner(isWinner);
                 }
 

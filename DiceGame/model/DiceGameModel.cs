@@ -77,5 +77,10 @@ namespace DiceGame.Model
             }
             return false;
         }
+
+        public void updatePoints(bool isWinner)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
