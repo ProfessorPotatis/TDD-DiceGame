@@ -79,7 +79,13 @@ namespace DiceGame.View
 
         public void showWinner(bool isWinner)
         {
-            Console.WriteLine(WINNER);
+            if (isWinner)
+            {
+                Console.WriteLine(WINNER);
+            } else
+            {
+                Console.WriteLine("You lost.");
+            }
         }
     }
 }
