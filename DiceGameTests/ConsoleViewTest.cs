@@ -116,7 +116,7 @@ namespace DiceGameTests
 
             sut.showWinner(isWinner);
 
-            stringWriter.Verify(sw => sw.WriteLine("You are a winner!"));
+            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.WINNER));
         }
 
         [Fact]
