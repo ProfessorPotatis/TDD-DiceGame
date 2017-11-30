@@ -11,12 +11,14 @@ namespace DiceGameTests
     {
         protected Mock<IConsoleView> mockView;
         protected Mock<IDiceGameModel> mockModel;
+        protected Mock<IPlayer> mockPlayer;
         protected Game sut;
 
         public SetupForGameTest()
         {
             mockView = new Mock<IConsoleView>();
             mockModel = new Mock<IDiceGameModel>();
+            mockPlayer = new Mock<IPlayer>();
 
             Setup();
 

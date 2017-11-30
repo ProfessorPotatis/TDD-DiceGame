@@ -34,7 +34,7 @@ namespace DiceGameTests
         }
 
         [Fact]
-        public void shouldEndGameWhenPointsAreZero()
+        public void shouldCheckIfPointsAreZero()
         {
             sut.isGameOver();
 

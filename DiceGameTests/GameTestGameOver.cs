@@ -16,9 +16,6 @@ namespace DiceGameTests
         {
             mockView.Setup(mock => mock.userQuits()).Returns(false);
 
-            points = 0;
-            mockModel.Setup(model => model.getPlayerPoints()).Returns(points);
-
             mockModel.Setup(model => model.isGameOver()).Returns(true);
         }
 

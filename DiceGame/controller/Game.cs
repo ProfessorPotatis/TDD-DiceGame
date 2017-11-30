@@ -39,7 +39,7 @@ namespace DiceGame.Controller
 
                 // With while-loop the tests doesn't run as they should -->
                 // change to if here to run the tests...
-                while (View.userQuits() == false && Model.isGameOver() == false)
+                if (View.userQuits() == false && Model.isGameOver() == false)
                 {
                     int points = Model.getPlayerPoints();
                     View.showPlayerPoints(points);
@@ -56,9 +56,7 @@ namespace DiceGame.Controller
                     bool isWinner = Model.isWinner(sumDice);
                     Model.updatePoints(isWinner, bet);
                     View.showWinner(isWinner);
-                }
-                
-                if (Model.isGameOver())
+                } else if (Model.isGameOver())
                 {
                     View.showGameOver();
                 }
