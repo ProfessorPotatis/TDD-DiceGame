@@ -2,12 +2,15 @@
 <body style="font-family: sans-serif;">
 <div style="white-space: pre;background-color: #EEF4ED;">using System;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">using System.IO;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">using System.Text.RegularExpressions;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">namespace DiceGame.Model</div>
 <div style="white-space: pre;background-color: #EEF4ED;">{</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    public class Player : IPlayer</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    {</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        private const int STARTING_POINTS = 100;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        private const string BET_OUT_OF_RANGE = &quot;\nBet is out of range.&quot;;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        private const string BET_NUMBER = &quot;Bet must be in the form of a number.&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        private int _points;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">        public Player()</div>
@@ -31,14 +34,31 @@
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public bool checkBetting(string bet)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
-<div style="white-space: pre;background-color: #D2EACE;">            int theBet = int.Parse(bet);</div>
+<div style="white-space: pre;background-color: #D2EACE;">            bool isNumber = this.checkIfNumber(bet);</div>
+<div style="white-space: pre;background-color: #D2EACE;">            int theBet = this.parseToInt(bet);</div>
 <div style="white-space: pre;background-color: #D2EACE;">            int points = this.getPlayerPoints();</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #D2EACE;">            if (theBet &gt; points)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">            {</div>
-<div style="white-space: pre;background-color: #D2EACE;">                throw new ArgumentOutOfRangeException(&quot;&quot;, &quot;\nBet is out of range.&quot;);</div>
+<div style="white-space: pre;background-color: #D2EACE;">                throw new ArgumentOutOfRangeException(&quot;&quot;, BET_OUT_OF_RANGE);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">            }</div>
 <div style="white-space: pre;background-color: #D2EACE;">            return true;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public bool checkIfNumber(string bet)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            if (Regex.IsMatch(bet, @&quot;^\d+$&quot;))</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                return true;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            } else</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                throw new FormatException(BET_NUMBER);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public int parseToInt(string bet)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            return int.Parse(bet);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public void addPoints(int plusPoints)</div>
