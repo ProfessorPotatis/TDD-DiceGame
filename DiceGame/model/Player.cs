@@ -42,7 +42,7 @@ namespace DiceGame.Model
                 return true;
             } else
             {
-                throw new NotImplementedException("Bet must be in the form of a number.");
+                throw new FormatException("Bet must be in the form of a number.");
             }
         }
 
