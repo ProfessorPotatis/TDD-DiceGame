@@ -44,7 +44,7 @@ namespace DiceGame.Controller
                     int points = Model.getPlayerPoints();
                     View.showPlayerPoints(points);
 
-                    if (points == 0)
+                    if (Model.isGameOver())
                     {
                         View.showGameOver();
                     } else
