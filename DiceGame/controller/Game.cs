@@ -39,23 +39,29 @@ namespace DiceGame.Controller
 
                 // With while-loop the tests doesn't run as they should -->
                 // change to if here to run the tests...
-                while (View.userQuits() == false)
+                if (View.userQuits() == false)
                 {
                     int points = Model.getPlayerPoints();
                     View.showPlayerPoints(points);
 
-                    View.showBetting();
-                    string bet = View.getUserBet();
-                    Model.checkBetting(bet);
+                    if (points == 0)
+                    {
+                        View.showGameOver();
+                    } else
+                    {
+                        View.showBetting();
+                        string bet = View.getUserBet();
+                        Model.checkBetting(bet);
 
-                    View.showRollMessage();
-                    int[] dice = Model.rollDice();
-                    View.showDiceValues(dice);
-                    int sumDice = Model.sumDice(dice[0], dice[1]);
+                        View.showRollMessage();
+                        int[] dice = Model.rollDice();
+                        View.showDiceValues(dice);
+                        int sumDice = Model.sumDice(dice[0], dice[1]);
 
-                    bool isWinner = Model.isWinner(sumDice);
-                    Model.updatePoints(isWinner, bet);
-                    View.showWinner(isWinner);
+                        bool isWinner = Model.isWinner(sumDice);
+                        Model.updatePoints(isWinner, bet);
+                        View.showWinner(isWinner);
+                    }
                 }
 
                 View.showQuitMessage();
