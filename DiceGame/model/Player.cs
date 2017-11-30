@@ -7,6 +7,8 @@ namespace DiceGame.Model
     public class Player : IPlayer
     {
         private const int STARTING_POINTS = 100;
+        private const string BET_OUT_OF_RANGE = "\nBet is out of range.";
+        private const string BET_NUMBER = "Bet must be in the form of a number.";
         private int _points;
 
         public Player()
@@ -37,12 +39,12 @@ namespace DiceGame.Model
 
                 if (theBet > points)
                 {
-                    throw new ArgumentOutOfRangeException("", "\nBet is out of range.");
+                    throw new ArgumentOutOfRangeException("", BET_OUT_OF_RANGE);
                 }
                 return true;
             } else
             {
-                throw new FormatException("Bet must be in the form of a number.");
+                throw new FormatException(BET_NUMBER);
             }
         }
 
