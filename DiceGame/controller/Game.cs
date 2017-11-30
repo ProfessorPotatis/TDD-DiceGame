@@ -37,7 +37,9 @@ namespace DiceGame.Controller
             {
                 View.showMenu();
 
-                while (View.userQuits() == false)
+                // With while-loop the tests doesn't run as they should -->
+                // change to if here to run the tests...
+                if (View.userQuits() == false)
                 {
                     int points = Model.getPlayerPoints();
                     View.showPlayerPoints(points);

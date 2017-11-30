@@ -34,11 +34,19 @@ namespace DiceGameTests
         }
 
         [Fact]
-        public void shouldCheckBettingAndThrowException()
+        public void shouldCheckBettingAndThrowArgumentOutOfRangeException()
         {
             string bet = "120";
 
             Assert.Throws<ArgumentOutOfRangeException>(() => sut.checkBetting(bet));
+        }
+
+        [Fact]
+        public void shouldCheckBettingAndThrowFormatException()
+        {
+            string bet = "q";
+
+            Assert.Throws<FormatException>(() => sut.checkBetting(bet));
         }
 
         [Fact]

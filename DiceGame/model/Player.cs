@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace DiceGame.Model
 {
@@ -29,14 +30,20 @@ namespace DiceGame.Model
 
         public bool checkBetting(string bet)
         {
-            int theBet = int.Parse(bet);
-            int points = this.getPlayerPoints();
-
-            if (theBet > points)
+            if (Regex.IsMatch(bet, @"^\d+$"))
             {
-                throw new ArgumentOutOfRangeException("", "\nBet is out of range.");
+                int theBet = int.Parse(bet);
+                int points = this.getPlayerPoints();
+
+                if (theBet > points)
+                {
+                    throw new ArgumentOutOfRangeException("", "\nBet is out of range.");
+                }
+                return true;
+            } else
+            {
+                throw new NotImplementedException("Bet must be in the form of a number.");
             }
-            return true;
         }
 
         public void addPoints(int plusPoints)
