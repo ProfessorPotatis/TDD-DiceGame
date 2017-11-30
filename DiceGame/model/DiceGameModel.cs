@@ -48,6 +48,11 @@ namespace DiceGame.Model
             return Player.getPlayerPoints();
         }
 
+        public bool isGameOver()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool checkBetting(string bet)
         {
             return Player.checkBetting(bet);

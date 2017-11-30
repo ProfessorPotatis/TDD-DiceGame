@@ -30,6 +30,11 @@ namespace DiceGame.Model
             return Points;
         }
 
+        public bool isPointsZero()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool checkBetting(string bet)
         {
             bool isNumber = this.checkIfNumber(bet);

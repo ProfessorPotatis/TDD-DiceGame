@@ -34,6 +34,14 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldEndGameWhenPointsAreZero()
+        {
+            sut.isGameOver();
+
+            mockPlayer.Verify(player => player.isPointsZero());
+        }
+
+        [Fact]
         public void shouldCheckBetting()
         {
             string inputBet = "10";

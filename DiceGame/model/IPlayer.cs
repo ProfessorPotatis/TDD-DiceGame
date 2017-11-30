@@ -5,6 +5,7 @@ namespace DiceGame.Model
     public interface IPlayer
     {
         int getPlayerPoints();
+        bool isPointsZero();
         bool checkBetting(string bet);
         bool checkIfNumber(string bet);
         int parseToInt(string bet);
