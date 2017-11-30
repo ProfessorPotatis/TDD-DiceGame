@@ -50,7 +50,7 @@ namespace DiceGame.Model
 
         public bool isGameOver()
         {
-            throw new NotImplementedException();
+            return Player.isPointsZero();
         }
 
         public bool checkBetting(string bet)
