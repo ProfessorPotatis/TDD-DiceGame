@@ -1,0 +1,78 @@
+<html>
+<body style="font-family: sans-serif;">
+<div style="white-space: pre;background-color: #EEF4ED;">using System;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">namespace DiceGame.Controller</div>
+<div style="white-space: pre;background-color: #EEF4ED;">{</div>
+<div style="white-space: pre;background-color: #EEF4ED;">    public class Game</div>
+<div style="white-space: pre;background-color: #EEF4ED;">    {</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        private View.IConsoleView _view;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        private Model.IDiceGameModel _model;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">        public Game(View.IConsoleView view, Model.IDiceGameModel model)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            View = view;</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Model = model;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public View.IConsoleView View</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            get { return _view; }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            set</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                _view = value;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public Model.IDiceGameModel Model</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #D2EACE;">            get { return _model; }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            set</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                _model = value;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public void run()</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            try</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                View.showMenu();</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                // With while-loop the tests doesn&#39;t run as they should --&gt;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                // change to if here to run the tests...</div>
+<div style="white-space: pre;background-color: #D2EACE;">                if (View.userQuits() == false)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    int points = Model.getPlayerPoints();</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    View.showPlayerPoints(points);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                    if (Model.isGameOver())</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                    {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                        View.showGameOver();</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                    } else</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                    {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                        View.showBetting();</div>
+<div style="white-space: pre;background-color: #D2EACE;">                        string bet = View.getUserBet();</div>
+<div style="white-space: pre;background-color: #D2EACE;">                        Model.checkBetting(bet);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                        View.showRollMessage();</div>
+<div style="white-space: pre;background-color: #D2EACE;">                        int[] dice = Model.rollDice();</div>
+<div style="white-space: pre;background-color: #D2EACE;">                        View.showDiceValues(dice);</div>
+<div style="white-space: pre;background-color: #D2EACE;">                        int sumDice = Model.sumDice(dice[0], dice[1]);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                        bool isWinner = Model.isWinner(sumDice);</div>
+<div style="white-space: pre;background-color: #D2EACE;">                        Model.updatePoints(isWinner, bet);</div>
+<div style="white-space: pre;background-color: #D2EACE;">                        View.showWinner(isWinner);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                    }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
+<div style="white-space: pre;background-color: #D2EACE;">                View.showQuitMessage();</div>
+<div style="white-space: pre;background-color: #D2EACE;">            } catch (Exception ex)</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
+<div style="white-space: pre;background-color: #D2EACE;">                View.showException(ex.Message);</div>
+<div style="white-space: pre;background-color: #EEF4ED;">            }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">    }</div>
+<div style="white-space: pre;background-color: #EEF4ED;">}</div>
+</body>
+</html>
