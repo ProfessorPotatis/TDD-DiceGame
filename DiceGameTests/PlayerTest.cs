@@ -24,6 +24,14 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldReturnTrueWhenPointsAreZero()
+        {
+            bool actual = sut.isPointsZero();
+
+            Assert.True(actual);
+        }
+
+        [Fact]
         public void shouldCheckBettingAndReturnTrue()
         {
             string bet = "20";
