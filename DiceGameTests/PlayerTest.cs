@@ -26,6 +26,8 @@ namespace DiceGameTests
         [Fact]
         public void shouldReturnTrueWhenPointsAreZero()
         {
+            sut.removePoints(100);
+            
             bool actual = sut.isPointsZero();
 
             Assert.True(actual);

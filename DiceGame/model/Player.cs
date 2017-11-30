@@ -32,7 +32,13 @@ namespace DiceGame.Model
 
         public bool isPointsZero()
         {
-            throw new NotImplementedException();
+            int points = this.getPlayerPoints();
+
+            if (points == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public bool checkBetting(string bet)
