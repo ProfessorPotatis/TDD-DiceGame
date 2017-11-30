@@ -18,14 +18,8 @@ namespace DiceGameTests
 
             points = 0;
             mockModel.Setup(model => model.getPlayerPoints()).Returns(points);
-        }
 
-        [Fact]
-        public void shouldShowGameOver()
-        {
-            sut.run();
-
-            mockView.Verify(view => view.showGameOver());
+            mockModel.Setup(model => model.isGameOver()).Returns(true);
         }
 
         [Fact]
@@ -34,6 +28,14 @@ namespace DiceGameTests
             sut.run();
 
             mockModel.Verify(model => model.isGameOver());
+        }
+
+        [Fact]
+        public void shouldShowGameOver()
+        {
+            sut.run();
+
+            mockView.Verify(view => view.showGameOver());
         }
     }
 }
