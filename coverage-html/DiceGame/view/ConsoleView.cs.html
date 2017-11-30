@@ -8,7 +8,6 @@
 <div style="white-space: pre;background-color: #EEF4ED;">{</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    public class ConsoleView : IConsoleView</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    {</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        private StringWriter _output;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string MENU = &quot;Dice Game Menu\nPress any key to play or &#39;q&#39; to quit.&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string QUIT = &quot;Thank you for playing and welcome back next time.&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string BET = &quot;Place your bet: &quot;;</div>
@@ -19,20 +18,6 @@
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string LOSER = &quot;\nYou lost.\nPress any key to play again or &#39;q&#39; to quit&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string GAME_OVER = &quot;GAME OVER!&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #D2EACE;">        public ConsoleView(StringWriter output)</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
-<div style="white-space: pre;background-color: #D2EACE;">            Output = output;</div>
-<div style="white-space: pre;background-color: #D2EACE;">            Console.SetOut(Output); // Uncomment this if you are testing</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
-<div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        public StringWriter Output</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        {</div>
-<div style="white-space: pre;background-color: #D2EACE;">            get { return _output; }</div>
-<div style="white-space: pre;background-color: #EEF4ED;">            set</div>
-<div style="white-space: pre;background-color: #EEF4ED;">            {</div>
-<div style="white-space: pre;background-color: #D2EACE;">                _output = value;</div>
-<div style="white-space: pre;background-color: #EEF4ED;">            }</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public void showMenu()</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>

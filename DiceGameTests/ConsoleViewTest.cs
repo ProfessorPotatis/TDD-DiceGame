@@ -9,117 +9,201 @@ namespace DiceGameTests
 {
     public class ConsoleViewTest : IDisposable
     {
-        private Mock<StringWriter> stringWriter;
         private ConsoleView sut;
 
         // Setup
         public ConsoleViewTest()
         {
-            stringWriter = new Mock<StringWriter>();
-            sut = new ConsoleView(stringWriter.Object);
+            sut = new ConsoleView();
         }
 
         [Fact]
         public void shouldShowMenu()
         {
-            sut.showMenu();
+            using (StringWriter strW = new StringWriter())
+            {
+                Console.SetOut(strW);
+                
+                sut.showMenu();
 
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.MENU));
+                string expected = ConsoleView.MENU;
+                string actual = strW.ToString();
+
+                Assert.Contains(expected, actual);
+            }
         }
 
         [Fact]
         public void shouldShowQuitMessage()
         {
-            sut.showQuitMessage();
+            using (StringWriter strW = new StringWriter())
+            {
+                Console.SetOut(strW);
+                
+                sut.showQuitMessage();
 
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.QUIT));
+                string expected = ConsoleView.QUIT;
+                string actual = strW.ToString();
+
+                Assert.Contains(expected, actual);
+            }
         }
 
         [Fact]
         public void shouldShowPlayerPoints()
         {
-            int points = 100;
+            using (StringWriter strW = new StringWriter())
+            {
+                Console.SetOut(strW);
+                
+                int points = 100;
 
-            sut.showPlayerPoints(points);
+                sut.showPlayerPoints(points);
 
-            stringWriter.Verify(sw => sw.WriteLine("Player has " + points + " points."));
+                string expected = "Player has " + points + " points.";
+                string actual = strW.ToString();
+
+                Assert.Contains(expected, actual);
+            }
         }
 
         [Fact]
         public void shouldShowGameOverMessage()
         {
-            sut.showGameOver();
+            using (StringWriter strW = new StringWriter())
+            {
+                Console.SetOut(strW);
+                
+                sut.showGameOver();
 
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.GAME_OVER));
+                string expected = ConsoleView.GAME_OVER;
+                string actual = strW.ToString();
+
+                Assert.Contains(expected, actual);
+            }
         }
 
         [Fact]
         public void shouldShowBetting()
         {
-            sut.showBetting();
+            using (StringWriter strW = new StringWriter())
+            {
+                Console.SetOut(strW);
+                
+                sut.showBetting();
 
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.BET));
+                string expected = ConsoleView.BET;
+                string actual = strW.ToString();
+
+                Assert.Contains(expected, actual);
+            }
         }
 
         [Fact]
         public void shouldGetUserBet()
         {
-            using (StringReader sr = new StringReader("1000"))
+            using (StringWriter strW = new StringWriter())
             {
-                Console.SetIn(sr);
+                using (StringReader sr = new StringReader("1000"))
+                {
+                    Console.SetOut(strW);
+                    Console.SetIn(sr);
 
-                string bet = sut.getUserBet();
+                    string bet = sut.getUserBet();
 
-                stringWriter.Verify(sw => sw.WriteLine(ConsoleView.YOU_BET + bet));
-                Assert.Equal(bet, "1000");
+                    string expected = ConsoleView.YOU_BET + bet;
+                    string actual = strW.ToString();
+
+                    Assert.Contains(expected, actual);
+                    Assert.Equal(bet, "1000");
+                }
             }
         }
 
         [Fact]
         public void shouldShowExceptionMessage()
         {
-            sut.showException("\nBet is out of range.");
+            using (StringWriter strW = new StringWriter())
+            {
+                Console.SetOut(strW);
+                
+                sut.showException("\nBet is out of range.");
 
-            stringWriter.Verify(sw => sw.WriteLine("\nBet is out of range."));
+                string expected = "\nBet is out of range.";
+                string actual = strW.ToString();
+
+                Assert.Contains(expected, actual);
+            }
         }
 
         [Fact]
         public void shouldShowRollMessage()
         {
-            sut.showRollMessage();
+            using (StringWriter strW = new StringWriter())
+            {
+                Console.SetOut(strW);
+                
+                sut.showRollMessage();
 
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.ROLL));
+                string expected = ConsoleView.ROLL;
+                string actual = strW.ToString();
+
+                Assert.Contains(expected, actual);
+            }
         }
 
         [Fact]
         public void shouldShowDiceValues()
         {
-            int[] dice = {1, 5};
+            using (StringWriter strW = new StringWriter())
+            {
+                Console.SetOut(strW);
 
-            sut.showDiceValues(dice);
+                int[] dice = {1, 5};
 
-            stringWriter.Verify(sw => sw.WriteLine("\nDice 1: " + dice[0]));
-            stringWriter.Verify(sw => sw.WriteLine("Dice 2: " + dice[1]));
+                sut.showDiceValues(dice);
+
+                string expected = "\nDice 1: " + dice[0] + "\nDice 2: " + dice[1];
+                string actual = strW.ToString();
+
+                Assert.Contains(expected, actual);
+            }
         }
 
         [Fact]
         public void shouldShowPlayerAsWinner()
         {
-            bool isWinner = true;
+            using (StringWriter strW = new StringWriter())
+            {
+                Console.SetOut(strW);
+                
+                bool isWinner = true;
 
-            sut.showWinner(isWinner);
+                sut.showWinner(isWinner);
 
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.WINNER));
+                string expected = ConsoleView.WINNER;
+                string actual = strW.ToString();
+
+                Assert.Contains(expected, actual);
+            }
         }
 
         [Fact]
         public void shouldShowPlayerAsLoser()
         {
-            bool isWinner = false;
+            using (StringWriter strW = new StringWriter())
+            {
+                Console.SetOut(strW);
+                
+                bool isWinner = false;
 
-            sut.showWinner(isWinner);
+                sut.showWinner(isWinner);
 
-            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.LOSER));
+                string expected = ConsoleView.LOSER;
+                string actual = strW.ToString();
+
+                Assert.Contains(expected, actual);
+            }
         }
 
         [Fact]

@@ -7,8 +7,7 @@ namespace DiceGame
     {
         static void Main(string[] args)
         {
-            StringWriter stringWriter = new StringWriter();
-            View.IConsoleView view = new View.ConsoleView(stringWriter);
+            View.IConsoleView view = new View.ConsoleView();
             Model.IDice dice1 = new Model.Dice();
             Model.IDice dice2 = new Model.Dice();
             Model.IPlayer player = new Model.Player();

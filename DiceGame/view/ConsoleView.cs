@@ -6,7 +6,6 @@ namespace DiceGame.View
 {
     public class ConsoleView : IConsoleView
     {
-        private StringWriter _output;
         public const string MENU = "Dice Game Menu\nPress any key to play or 'q' to quit.";
         public const string QUIT = "Thank you for playing and welcome back next time.";
         public const string BET = "Place your bet: ";
@@ -17,20 +16,6 @@ namespace DiceGame.View
         public const string LOSER = "\nYou lost.\nPress any key to play again or 'q' to quit";
         public const string GAME_OVER = "GAME OVER!";
 
-        public ConsoleView(StringWriter output)
-        {
-            Output = output;
-            Console.SetOut(Output); // Uncomment this if you are testing
-        }
-
-        public StringWriter Output
-        {
-            get { return _output; }
-            set
-            {
-                _output = value;
-            }
-        }
 
         public void showMenu()
         {
