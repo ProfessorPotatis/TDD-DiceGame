@@ -32,20 +32,31 @@ namespace DiceGame.Model
 
         public bool checkBetting(string bet)
         {
+            bool isNumber = this.checkIfNumber(bet);
+            int theBet = this.parseToInt(bet);
+            int points = this.getPlayerPoints();
+
+            if (theBet > points)
+            {
+                throw new ArgumentOutOfRangeException("", BET_OUT_OF_RANGE);
+            }
+            return true;
+        }
+
+        public bool checkIfNumber(string bet)
+        {
             if (Regex.IsMatch(bet, @"^\d+$"))
             {
-                int theBet = int.Parse(bet);
-                int points = this.getPlayerPoints();
-
-                if (theBet > points)
-                {
-                    throw new ArgumentOutOfRangeException("", BET_OUT_OF_RANGE);
-                }
                 return true;
             } else
             {
                 throw new FormatException(BET_NUMBER);
             }
+        }
+
+        public int parseToInt(string bet)
+        {
+            return int.Parse(bet);
         }
 
         public void addPoints(int plusPoints)
