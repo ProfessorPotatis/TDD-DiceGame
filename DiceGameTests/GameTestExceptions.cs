@@ -11,6 +11,7 @@ namespace DiceGameTests
     {
         private int points;
         private string inputBet;
+        private string notANumber;
 
         // Setup
         public override void Setup()
@@ -24,6 +25,9 @@ namespace DiceGameTests
             mockView.Setup(mock => mock.getUserBet()).Returns(inputBet);
 
             mockModel.Setup(mock => mock.checkBetting(inputBet)).Throws(new ArgumentOutOfRangeException());
+
+            notANumber = "qldj";
+            mockModel.Setup(mock => mock.checkBetting(notANumber)).Throws(new FormatException());
         }
 
         [Fact]
