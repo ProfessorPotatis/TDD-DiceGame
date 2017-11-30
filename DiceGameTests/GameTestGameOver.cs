@@ -27,5 +27,13 @@ namespace DiceGameTests
 
             mockView.Verify(view => view.showGameOver());
         }
+
+        [Fact]
+        public void shouldCheckIfGameIsOver()
+        {
+            sut.run();
+
+            mockModel.Verify(model => model.isGameOver());
+        }
     }
 }
