@@ -46,6 +46,14 @@ namespace DiceGameTests
         }
 
         [Fact]
+        public void shouldShowGameOverMessage()
+        {
+            sut.showGameOver();
+
+            stringWriter.Verify(sw => sw.WriteLine("GAME OVER!\nYou're out of points."));
+        }
+
+        [Fact]
         public void shouldShowBetting()
         {
             sut.showBetting();

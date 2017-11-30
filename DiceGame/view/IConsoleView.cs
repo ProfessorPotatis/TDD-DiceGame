@@ -7,6 +7,7 @@ namespace DiceGame.View
         void showMenu();
         void showQuitMessage();
         void showPlayerPoints(int points);
+        void showGameOver();
         void showBetting();
         bool userQuits();
         string getUserBet();

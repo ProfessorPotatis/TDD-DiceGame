@@ -19,7 +19,7 @@ namespace DiceGame.View
         public ConsoleView(StringWriter output)
         {
             Output = output;
-            Console.SetOut(Output); // Uncomment this if you are testing
+            //Console.SetOut(Output); // Uncomment this if you are testing
         }
 
         public StringWriter Output
@@ -44,6 +44,11 @@ namespace DiceGame.View
         public void showPlayerPoints(int points)
         {
             Console.WriteLine("Player has {0} points.", points);
+        }
+
+        public void showGameOver()
+        {
+            throw new NotImplementedException();
         }
 
         public void showBetting()
