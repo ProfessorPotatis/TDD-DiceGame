@@ -50,7 +50,7 @@ namespace DiceGameTests
         {
             sut.showGameOver();
 
-            stringWriter.Verify(sw => sw.WriteLine("GAME OVER!\nYou're out of points."));
+            stringWriter.Verify(sw => sw.WriteLine(ConsoleView.GAME_OVER));
         }
 
         [Fact]

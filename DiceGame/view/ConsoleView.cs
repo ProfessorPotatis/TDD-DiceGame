@@ -15,6 +15,7 @@ namespace DiceGame.View
         public const string ROLL = "\nRolling the dice...";
         public const string WINNER = "\nYou are a winner!";
         public const string LOSER = "\nYou lost.";
+        public const string GAME_OVER = "GAME OVER!\nYou're out of points.";
 
         public ConsoleView(StringWriter output)
         {
@@ -48,7 +49,7 @@ namespace DiceGame.View
 
         public void showGameOver()
         {
-            Console.WriteLine("GAME OVER!\nYou're out of points.");
+            Console.WriteLine(GAME_OVER);
         }
 
         public void showBetting()
