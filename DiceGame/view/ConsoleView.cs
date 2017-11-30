@@ -19,7 +19,7 @@ namespace DiceGame.View
         public ConsoleView(StringWriter output)
         {
             Output = output;
-            //Console.SetOut(Output); // Uncomment this if you are testing
+            Console.SetOut(Output); // Uncomment this if you are testing
         }
 
         public StringWriter Output
@@ -48,7 +48,7 @@ namespace DiceGame.View
 
         public void showGameOver()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("GAME OVER!\nYou're out of points.");
         }
 
         public void showBetting()
