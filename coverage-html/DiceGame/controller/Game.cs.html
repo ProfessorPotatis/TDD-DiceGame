@@ -41,7 +41,7 @@
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">                // With while-loop the tests doesn&#39;t run as they should --&gt;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">                // change to if here to run the tests...</div>
-<div style="white-space: pre;background-color: #D2EACE;">                if (View.userQuits() == false)</div>
+<div style="white-space: pre;background-color: #D2EACE;">                /*while*/if (View.userQuits() == false)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">                {</div>
 <div style="white-space: pre;background-color: #D2EACE;">                    int points = Model.getPlayerPoints();</div>
 <div style="white-space: pre;background-color: #D2EACE;">                    View.showPlayerPoints(points);</div>
@@ -49,6 +49,7 @@
 <div style="white-space: pre;background-color: #D2EACE;">                    if (Model.isGameOver())</div>
 <div style="white-space: pre;background-color: #EEF4ED;">                    {</div>
 <div style="white-space: pre;background-color: #D2EACE;">                        View.showGameOver();</div>
+<div style="white-space: pre;background-color: #EEF4ED;">                        //break;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">                    } else</div>
 <div style="white-space: pre;background-color: #EEF4ED;">                    {</div>
 <div style="white-space: pre;background-color: #D2EACE;">                        View.showBetting();</div>

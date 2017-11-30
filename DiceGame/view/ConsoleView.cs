@@ -7,15 +7,15 @@ namespace DiceGame.View
     public class ConsoleView : IConsoleView
     {
         private StringWriter _output;
-        public const string MENU = "Dice Game Menu\nPress any key to play or 'q' to quit";
-        public const string QUIT = "Thank you for playing and welcome back next time";
+        public const string MENU = "Dice Game Menu\nPress any key to play or 'q' to quit.";
+        public const string QUIT = "Thank you for playing and welcome back next time.";
         public const string BET = "Place your bet: ";
         public const string QUIT_OPTION = "q";
         public const string YOU_BET = "\nYou bet: ";
         public const string ROLL = "\nRolling the dice...";
-        public const string WINNER = "\nYou are a winner!";
-        public const string LOSER = "\nYou lost.";
-        public const string GAME_OVER = "GAME OVER!\nYou're out of points.";
+        public const string WINNER = "\nYou are a winner!\nPress any key to play again or 'q' to quit";
+        public const string LOSER = "\nYou lost.\nPress any key to play again or 'q' to quit";
+        public const string GAME_OVER = "GAME OVER!";
 
         public ConsoleView(StringWriter output)
         {
@@ -44,6 +44,7 @@ namespace DiceGame.View
 
         public void showPlayerPoints(int points)
         {
+            Console.Clear();
             Console.WriteLine("Player has {0} points.", points);
         }
 

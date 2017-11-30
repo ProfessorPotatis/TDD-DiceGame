@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sofiakristiansen/Downloads/TDD-DiceGame-master-1/DiceGame/DiceGame.csproj",
+      "projectUniqueName": "/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGame/DiceGame.csproj",
       "projectName": "DiceGame",
-      "projectPath": "/Users/sofiakristiansen/Downloads/TDD-DiceGame-master-1/DiceGame/DiceGame.csproj",
+      "projectPath": "/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGame/DiceGame.csproj",
       "packagesPath": "/Users/sofiakristiansen/.nuget/packages/",
-      "outputPath": "/Users/sofiakristiansen/Downloads/TDD-DiceGame-master-1/DiceGame/obj/",
+      "outputPath": "/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGame/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

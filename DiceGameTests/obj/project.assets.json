@@ -5788,11 +5788,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sofiakristiansen/Downloads/TDD-DiceGame-master-1/DiceGameTests/DiceGameTests.csproj",
+      "projectUniqueName": "/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/DiceGameTests.csproj",
       "projectName": "DiceGameTests",
-      "projectPath": "/Users/sofiakristiansen/Downloads/TDD-DiceGame-master-1/DiceGameTests/DiceGameTests.csproj",
+      "projectPath": "/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/DiceGameTests.csproj",
       "packagesPath": "/Users/sofiakristiansen/.nuget/packages/",
-      "outputPath": "/Users/sofiakristiansen/Downloads/TDD-DiceGame-master-1/DiceGameTests/obj/",
+      "outputPath": "/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGameTests/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -5809,8 +5809,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "/Users/sofiakristiansen/Downloads/TDD-DiceGame-master-1/DiceGame/DiceGame.csproj": {
-              "projectPath": "/Users/sofiakristiansen/Downloads/TDD-DiceGame-master-1/DiceGame/DiceGame.csproj"
+            "/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGame/DiceGame.csproj": {
+              "projectPath": "/Users/sofiakristiansen/Desktop/2dv610/TDD-DiceGame/DiceGame/DiceGame.csproj"
             }
           }
         }
