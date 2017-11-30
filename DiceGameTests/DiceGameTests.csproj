@@ -18,5 +18,6 @@
     <Content Include="GameTestQuit.cs" />
     <Content Include="GameTestBasicFlow.cs" />
     <Content Include="GameTestExceptions.cs" />
+    <Content Include="GameTestGameOver.cs" />
   </ItemGroup>
 </Project>
