@@ -8,14 +8,14 @@
 <div style="white-space: pre;background-color: #EEF4ED;">{</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    public class ConsoleView : IConsoleView</div>
 <div style="white-space: pre;background-color: #EEF4ED;">    {</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        public const string MENU = &quot;Dice Game Menu\nPress any key to play or &#39;q&#39; to quit.&quot;;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public const string MENU = &quot;Dice Game Menu\n_________________\nTo win you must get a lucky number seven.\nPress any key to play or &#39;q&#39; to quit.&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string QUIT = &quot;Thank you for playing and welcome back next time.&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string BET = &quot;Place your bet: &quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string QUIT_OPTION = &quot;q&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string YOU_BET = &quot;\nYou bet: &quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string ROLL = &quot;\nRolling the dice...&quot;;</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        public const string WINNER = &quot;\nYou are a winner!\nPress any key to play again or &#39;q&#39; to quit&quot;;</div>
-<div style="white-space: pre;background-color: #EEF4ED;">        public const string LOSER = &quot;\nYou lost.\nPress any key to play again or &#39;q&#39; to quit&quot;;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public const string WINNER = &quot;\nYou are a winner!\n\nPress any key to play again or &#39;q&#39; to quit&quot;;</div>
+<div style="white-space: pre;background-color: #EEF4ED;">        public const string LOSER = &quot;\nYou lost.\n\nPress any key to play again or &#39;q&#39; to quit&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public const string GAME_OVER = &quot;GAME OVER!&quot;;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
@@ -32,7 +32,7 @@
 <div style="white-space: pre;background-color: #EEF4ED;">        public void showPlayerPoints(int points)</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        {</div>
 <div style="white-space: pre;background-color: #D2EACE;">            Console.Clear();</div>
-<div style="white-space: pre;background-color: #D2EACE;">            Console.WriteLine(&quot;Player has {0} points.&quot;, points);</div>
+<div style="white-space: pre;background-color: #D2EACE;">            Console.WriteLine(&quot;You have {0} points.&quot;, points);</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        }</div>
 <div style="white-space: pre;background-color: #EEF4ED;">&nbsp;</div>
 <div style="white-space: pre;background-color: #EEF4ED;">        public void showGameOver()</div>
