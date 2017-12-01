@@ -36,6 +36,11 @@ dotnet run
 ```
 
 
+## Write bash-file for coverage
+Follow the instructions [here](https://github.com/lucaslorentz/minicover).  
+Name the file: checkCoverage.sh.
+
+
 ## Run all tests and generate test coverage (minicover)
 In the terminal, directory DiceGameTests:
 ```
@@ -43,3 +48,10 @@ bash checkCoverage.sh
 ```
 
 This generates a coverage report, which you can see in coverage-html/DiceGame.
+
+
+## Run application using Visual Studio Code integrated terminal
+1. Download and open this repository with VSC.
+2. Open the integrated terminal (Go to View -> Integrated Terminal).
+3. Write 'cd DiceGame' and press Enter.
+4. Write 'dotnet run' and press Enter.
