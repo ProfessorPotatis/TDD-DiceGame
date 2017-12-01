@@ -35,7 +35,7 @@ namespace DiceGameTests
         {
             sut.run();
    
-            mockView.Verify(view => view.showException(It.IsAny<string>()));       
+            mockView.Verify(view => view.showException(It.IsAny<string>()));    
         }
     }
 }

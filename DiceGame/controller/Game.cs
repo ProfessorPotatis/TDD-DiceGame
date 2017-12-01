@@ -37,9 +37,7 @@ namespace DiceGame.Controller
             {
                 View.showMenu();
 
-                // With while-loop the tests doesn't run as they should -->
-                // change to if here to run the tests...
-                /*while*/if (View.userQuits() == false)
+                while ((View.userQuits() == false))
                 {
                     int points = Model.getPlayerPoints();
                     View.showPlayerPoints(points);
@@ -47,7 +45,7 @@ namespace DiceGame.Controller
                     if (Model.isGameOver())
                     {
                         View.showGameOver();
-                        //break;
+                        break;
                     } else
                     {
                         View.showBetting();

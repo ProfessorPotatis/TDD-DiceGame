@@ -18,7 +18,9 @@ namespace DiceGameTests
         // Setup
         public override void Setup()
         {
-            mockView.Setup(mock => mock.userQuits()).Returns(false);
+            mockView.SetupSequence(mock => mock.userQuits())
+                .Returns(false)
+                .Returns(true);
 
             points = 100;
             mockModel.Setup(model => model.getPlayerPoints()).Returns(points);
@@ -115,6 +117,14 @@ namespace DiceGameTests
             sut.run();
 
             mockModel.Verify(model => model.sumDice(dice[0], dice[1]));
+        }
+
+        [Fact]
+        public void shouldCheckIfWinner()
+        {
+            sut.run();
+
+            mockModel.Verify(model => model.isWinner(sum));
         }
 
         [Fact]
