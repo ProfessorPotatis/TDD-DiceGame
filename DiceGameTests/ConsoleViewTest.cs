@@ -60,7 +60,7 @@ namespace DiceGameTests
 
                 sut.showPlayerPoints(points);
 
-                string expected = "Player has " + points + " points.";
+                string expected = "You have " + points + " points.";
                 string actual = strW.ToString();
 
                 Assert.Contains(expected, actual);

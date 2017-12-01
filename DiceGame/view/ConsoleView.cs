@@ -6,14 +6,14 @@ namespace DiceGame.View
 {
     public class ConsoleView : IConsoleView
     {
-        public const string MENU = "Dice Game Menu\nPress any key to play or 'q' to quit.";
+        public const string MENU = "Dice Game Menu\n_________________\nTo win you must get a lucky number seven.\nPress any key to play or 'q' to quit.";
         public const string QUIT = "Thank you for playing and welcome back next time.";
         public const string BET = "Place your bet: ";
         public const string QUIT_OPTION = "q";
         public const string YOU_BET = "\nYou bet: ";
         public const string ROLL = "\nRolling the dice...";
-        public const string WINNER = "\nYou are a winner!\nPress any key to play again or 'q' to quit";
-        public const string LOSER = "\nYou lost.\nPress any key to play again or 'q' to quit";
+        public const string WINNER = "\nYou are a winner!\n\nPress any key to play again or 'q' to quit";
+        public const string LOSER = "\nYou lost.\n\nPress any key to play again or 'q' to quit";
         public const string GAME_OVER = "GAME OVER!";
 
 
@@ -30,7 +30,7 @@ namespace DiceGame.View
         public void showPlayerPoints(int points)
         {
             Console.Clear();
-            Console.WriteLine("Player has {0} points.", points);
+            Console.WriteLine("You have {0} points.", points);
         }
 
         public void showGameOver()
